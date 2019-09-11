@@ -1,72 +1,62 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+Hidup adalah suatu proses alami dari lahir/bayi, kanak-kanak, remaja, dewasa, tua/lanjut usia; begitulah sunatullah untuk manusia penghuni bumi ini. Pada setiap fasenya memerlukan upaya sungguh-sunguh bila diinginkan kualitas hidup yang baik menurut standar sariat.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Usia lanjut adalah usia yang sangat memerlukan perhatian untuk menjadi berkualitas. Faktanya, manusia baik laki-laki maupun perempuan menjalani dan mengurus kehidupannya dalam mencari nafkah, meniti karir, menapaki jabatan, dan lainnya; sehingga manusia kadang lupa tujuan akhir kehidupan. Kadang lupa bahwa hidup itu ada dua episode, yaitu : episode dunia dan episode akhirat. Ketika sudah pensiun atau sudah tua, baru merasa bahwa selama ini hanya episode duania yang diutamakan, difikirkan, dan dikejar. Kondisi tersebut tersadarkan ketika usia sudah merasa tua, banyak yang mengalami limbung jiwa... Merasa ada yang kurang dalam hidupnya. Bahkan pada akhirnya sering stress, gampang marah-marah, rewel dan egois di masa tuanya.
 
-## About Laravel
+Untuk itu mereka butuh pendampingan; sesuatu berupa tempat, komunitas, suasana yang akan membimbing dan menuntun serta menunjukkan arah “kemana mereka akan menuju”. Serta apa yang seharusnya mereka lakukan. Sehingga masa tua ini menjadi bermakna, jelas arahnya, dan indah, karena taat kepada Yang Maha Indah.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#TUJUAN
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Memberi wadah serta mengkondisikan perangkat untuk menata usia senja yang lebih berkualitas, baik dalam beribadah maupaun mengoptimalkan kemanfaatan hidupnya.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#TA’ARUF
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Taman Lansia (TL) ala An-Naba’ adalah tempat pembelajaran, pendidikan, pelatihan, pendampingan bagi santri-santri USIA SENJA, untuk memperdalam agama, mempersiapkan diri menghadapi akhir hayat insya Alloh menuju husnul khotimah.
+Tidaklah dikatakan baik, meski awalnya baik, kalau akhirnya buruk. Tidaklah dikatakan buruk, meski awalnya buruk, kalau akhirnya baik. Sunguh akhir itu lebih baik dari permulaan.
 
-## Laravel Sponsors
+2. TL An-Naba’ bukan panti jompo, bukan panti wreda.
+TL An-Naba’ merupakan wadah komunitas yang mengakomodasi santri usia senja.
+Santri usia muda mempersiapkan hidup; santri usia senja mempersiapkan mati. Santri usia senja bukan hanya yang dhuafa, karena bisa saja ia sukses duniawi, namun merasa miskin ukhrowi.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Lelaki anshar bertanya kepada Rosulullah SAW :
+Ya Rosulullah, mukmin manakah yang paling utama ? Beliau menjawab: Yang paling baik akhlaknya di antara mereka. Mukmin manakah yang paling cerdas ?, tanya lelaki itu lagi; Beliau menjawab : Orang yang paling banyak mengingat mati dan paling baik persiapanya untuk kehidupan setelah mati. Mereka itulah oran-orang yang cerdas”
+(HR. Ibnu Majah No. 4259, dihasankan Asy-Syaih Al-Albani ra dalam Ash-Shahihah No. 1384)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
 
-## Contributing
+#MOTTO DAN MOTIVASI
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+TL An-Naba’ : mempersiapkan insan “utama dan cerdas di usia senja”
 
-## Security Vulnerabilities
+Dengan motto : MENATA SENJA MENITI SURGA
+Ayah bunda mentari pagi memang indah, namun lembayung senja tidaklah kalah indahnya.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+#SASARAN
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Fokus   : Muslim laki-laki maupun perempuan
+Usia     : 50 tahun ke atas, yang masih bisa beraktifitas fisik maupun fikir.
+Umum  : dari berbagai kalangan
+
+
+#STANDAR PENGASUHAN
+
+Standard pengasuhan TTL An-Naba’ adalah BIRRUL WALIDAIN. Kami berharap dapat mengelola dan mengasuh santri-santri usia senja seperti berbakti kepada orang tua sendiri, yaitu standar BIRUL WALIDAIN (berbakti kepada kedua orang tua). Rancangan standar kurikulum pengasuhan disesuaikan dengan kondisi yang substansnya seputar :
+
+Belajar Al-Quran dasar
+Tahsin dan Tafsir
+Hadist
+Fiqih
+Taddabur
+Ruqyah dan praktek
+Konseling
+
+
+#TARGET
+Target pencapaian santri TL An-Naba’ adalah :
+1. Mencintai Al-Quran
+2. Rajin ibadah dan sholat lima waktu menjadi penantian
+3. Amalan-amalan sunnah menjadi kecintaan
+4. Husnul khotimah menjadi dambaan
+5. Ketrampilan tambahan sebagai kreatifitas sambilan
+6. Menata senja meniti surga menjadi tujuan
