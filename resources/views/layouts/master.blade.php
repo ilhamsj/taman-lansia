@@ -10,6 +10,12 @@
     @stack('styles')
 </head>
 <body>
+
+    <nav>
+        <a href="{{route('/')}}">Home</a>
+        <a href="{{route('blog.index')}}">Blog</a>
+        <a href="{{route('user.index')}}">User</a>
+    </nav>
     
     <main>
         @yield('content')

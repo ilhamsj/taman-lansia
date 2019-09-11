@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Route::resource('blog', 'BlogController');
 Route::resource('user', 'UserController');

@@ -4,19 +4,17 @@
     
 @section('content')
 
-<ul>
-
     @forelse ($items as $item)
-    <li>
-        {{$item->name}}
+        <h3>
+            <a href="{{ route('user.show', $item->id) }}">{{$item->name}}</a>
+        </h3>
         @forelse ($item->blog as $blog)
-            <h3>{{$blog->article->title}}</h3>
+            {{$blog->article->title}} <br/>
         @empty
-            <u>Tidak ada blog</u>
+            <u>Tidak punya post</u>
         @endforelse
     </li>
     @empty
-</ul>
     
 @endforelse
 

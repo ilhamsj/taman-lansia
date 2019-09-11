@@ -12,4 +12,10 @@ class UserController extends Controller
             'items' => \App\User::all()
         ]);
     }
+
+    
+    public function show($id)
+    {
+        
+    }
 }

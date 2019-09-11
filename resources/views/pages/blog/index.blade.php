@@ -6,12 +6,12 @@
 
 @forelse ($items as $item)
     <h3>
-        {{$item->article->title}}
+        <a href="{{ route('blog.show', $item->id) }}">{{$item->article->title}}</a>
     </h3>
-    {{$item->user->name}},
-    {{$item->category->name}},
-    {{$item->user->name}},
-    {{$item->image->url}},
+    {{$item->user->name}} <br/>
+    {{$item->category->name}} <br/>
+    {{$item->user->name}} <br/>
+    {{$item->image->url}} <br/>
 @empty
     
 @endforelse
