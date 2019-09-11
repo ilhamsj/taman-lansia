@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - {{env('app_name')}}</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
     @stack('styles')
 </head>
 <body>
@@ -15,7 +15,7 @@
         @yield('content')
     </main>
     
-    <script src="{{asset('js/app.js')}}"></script>
+    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
     @stack('scripts')
 </body>
 </html>
