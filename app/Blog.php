@@ -19,5 +19,14 @@ class Blog extends Model
     {
         return $this->belongsTo('App\Article');
     }
-    
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function image()
+    {
+        return $this->belongsTo('App\Image');
+    }
 }

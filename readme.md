@@ -1,3 +1,36 @@
+user
+    name
+
+
+article
+    article_id
+
+blog
+    article_id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Hidup adalah suatu proses alami dari lahir/bayi, kanak-kanak, remaja, dewasa, tua/lanjut usia; begitulah sunatullah untuk manusia penghuni bumi ini. Pada setiap fasenya memerlukan upaya sungguh-sunguh bila diinginkan kualitas hidup yang baik menurut standar sariat.
 
 Usia lanjut adalah usia yang sangat memerlukan perhatian untuk menjadi berkualitas. Faktanya, manusia baik laki-laki maupun perempuan menjalani dan mengurus kehidupannya dalam mencari nafkah, meniti karir, menapaki jabatan, dan lainnya; sehingga manusia kadang lupa tujuan akhir kehidupan. Kadang lupa bahwa hidup itu ada dua episode, yaitu : episode dunia dan episode akhirat. Ketika sudah pensiun atau sudah tua, baru merasa bahwa selama ini hanya episode duania yang diutamakan, difikirkan, dan dikejar. Kondisi tersebut tersadarkan ketika usia sudah merasa tua, banyak yang mengalami limbung jiwa... Merasa ada yang kurang dalam hidupnya. Bahkan pada akhirnya sering stress, gampang marah-marah, rewel dan egois di masa tuanya.
