@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Blog::class, function (Faker $faker) {
     return [
-        'user_id' => $faker->numberBetween($min = 1, $max = 10),
         'article_id' => $faker->numberBetween($min = 1, $max = 10),
         'category_id' => $faker->numberBetween($min = 1, $max = 10),
         'image_id' => $faker->numberBetween($min = 1, $max = 10),

@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | {{env('app_name')}}</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
-    {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     @stack('styles')
 </head>
 <body>
 
     <nav>
-        <a href="{{route('/')}}">Home</a>
-        <a href="{{route('blog.index')}}">Blog</a>
-        <a href="{{route('user.index')}}">User</a>
+        <div class="container">
+            <a href="{{route('/')}}">Home</a>
+            <a href="{{route('blog.index')}}">Blog</a>
+            <a href="{{route('user.index')}}">User</a>
+            <a href="{{route('admin.index')}}">Admin</a>
+        </div>
     </nav>
 
     @if (session('status'))
@@ -22,8 +25,10 @@
     @endif
 
     <header>
-        <h1>{{env('app_name')}}</h1>
-        <h2>{{Str::title('mempersiapkan insan utama dan cerdas di usia senja')}}</h2>
+        <div class="container">
+            <h1>{{env('app_name')}}</h1>
+            <h2>{{Str::title('mempersiapkan insan utama dan cerdas di usia senja')}}</h2>
+        </div>
     </header>
     
     <main>
@@ -31,10 +36,12 @@
     </main>
     
     <footer>
-        {{env('app_name')}} {{date('Y m D')}} 
+        <div class="container">
+            {{env('app_name')}} {{date('Y m D')}} 
+        </div>
     </footer>
 
-    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
+    <script src="{{asset('js/app.js')}}"></script>
     @stack('scripts')
 </body>
 </html>

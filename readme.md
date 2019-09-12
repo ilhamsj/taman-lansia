@@ -1,15 +1,15 @@
-user
+category
+    id
     name
 
 
-article
-    article_id
-
 blog
     article_id
+    category_id
 
-
-
+article
+    id
+    title
 
 
 
