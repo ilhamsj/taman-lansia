@@ -15,12 +15,14 @@ class ArticleController extends Controller
 
     public function create()
     {
-        //
+        return view('pages.admin.article.create');
     }
 
     public function store(Request $request)
     {
-        //
+        return redirect()->route('admin.index')->with([
+            'status' => 'Create Success'
+        ]);
     }
 
     public function show($id)

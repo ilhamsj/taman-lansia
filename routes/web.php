@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('blog', 'BlogController');
 Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
+Route::resource('article', 'ArticleController');

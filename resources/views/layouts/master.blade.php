@@ -21,9 +21,14 @@
     </nav>
 
     @if (session('status'))
-        {{ session('status') }}
-    @endif
-
+    <div class="container">        
+        <div class="alert alert-primary" role="alert">
+            <strong>
+                {{ session('status') }}
+            </strong>
+        </div>
+    </div>
+    @endif        
     <header>
         <div class="container">
             <h1>{{env('app_name')}}</h1>
@@ -42,6 +47,11 @@
     </footer>
 
     <script src="{{asset('js/app.js')}}"></script>
+    <script>
+        $(".alert").delay(2000).slideUp(200, function() {
+            $(this).alert('close');
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>
