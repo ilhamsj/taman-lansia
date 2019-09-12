@@ -47,12 +47,3 @@
     </div>
 </div>
 @endsection
-
-@push('scripts')
-    
-    <script>
-        console.log('yo');
-        
-    </script>
-
-@endpush

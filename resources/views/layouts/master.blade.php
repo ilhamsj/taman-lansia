@@ -7,7 +7,10 @@
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    @stack('styles')
+    <style>
+        main {min-height: 100vh}
+    </style>
+    @stack('styles') 
 </head>
 <body>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -18,8 +19,27 @@ class ArticleController extends Controller
         return view('pages.admin.article.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {
+        $image = \App\Image::create($request->all());
+
+        $article = \App\Article::create([
+            'user_id' => $request->user_id,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image_id' => $image->id,
+        ]);
+
+        $category = \App\Category::create([
+            'name' => $request->category
+        ]);
+        
+        \App\Blog::create([
+            'article_id' => $article->id,
+            'category_id' => $category->id,
+            'image_id' => $image->id,
+        ]);
+        
         return redirect()->route('admin.index')->with([
             'status' => 'Create Success'
         ]);
@@ -27,7 +47,9 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        //
+        return view('pages.article.show')->with([
+            'item' => \App\Article::find($id)
+        ]);
     }
 
     public function edit($id)

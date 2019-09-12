@@ -14,7 +14,7 @@ class AddImageIdColumnToArticle extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->bigInteger('image_id')->unsigned()->index();
+            $table->bigInteger('image_id')->unsigned()->index()->after('description')->nullable();
             $table->foreign('image_id')
                 ->references('id')
                 ->on('images')
