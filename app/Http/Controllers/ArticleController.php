@@ -54,12 +54,14 @@ class ArticleController extends Controller
 
     public function edit($id)
     {
-        //
+        return view('edit')->with([
+            'item' => \App\Article::find($id)
+        ]);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        dd($request->all());
     }
 
     public function destroy($id)

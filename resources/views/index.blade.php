@@ -11,13 +11,10 @@
                     <a class="btn btn-primary btn-sm" href="{{ route('article.create') }}">Tambah</a>
                 </div>
                 <div class="card-body">
-                    
-                </div>
-                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>User</th>
                                     <th>Title</th>
                                     <th>Foto</th>
@@ -47,8 +44,8 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            <a href="">Edit</a>
-                                            <a href="">Delete</a>
+                                            <a class="btn btn-warning btn-sm mb-2" href="{{ route('article.edit', $item->id) }}">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="{{ route('article.edit', $item->id) }}">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

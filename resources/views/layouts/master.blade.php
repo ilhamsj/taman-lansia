@@ -43,7 +43,7 @@
         @yield('content')
     </main>
     
-    <footer class="py-4 bg-light border-top">
+    <footer class="py-2 bg-light border-top">
         <div class="container text-muted">
             <a href="{{env('app_url')}}">{{env('app_name')}}</a>
             {{date('Y')}} 
