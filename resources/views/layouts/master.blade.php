@@ -35,17 +35,14 @@
         </div>
     </nav>
 
-    @if (session('status'))
-    <div class="container">        
-        <div class="alert alert-primary" role="alert">
-            <strong>
-                {{ session('status') }}
-            </strong>
-        </div>
-    </div>
-    @endif
-
     <main class="py-4">
+        @if (session('status'))
+        <div class="container">        
+            <div class="alert alert-primary" role="alert">
+                {{ session('status') }}
+            </div>
+        </div>
+        @endif
         @yield('content')
     </main>
     
@@ -63,6 +60,17 @@
         });
 
         $(".col-md-4:last-child").attr('class', 'col-md-4');
+
+        $(".card").hover(
+            function () {
+                $(this).attr("class", "card shadow");
+                $(this).children().last().show('100');
+            },
+            function () {
+                $(this).attr("class", "card");
+                $(this).children().last().hide('100');
+            }
+        );
     </script>
     @stack('scripts')
 </body>
