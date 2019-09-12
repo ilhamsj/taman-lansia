@@ -25,10 +25,12 @@
                             <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
                         </td>
                         <td>{{$item->title}}</td>
-                        <td>{{$item->image->url}}</td>
+                        <td>
+                            <img class="img-fluid" data-src="{{$item->image->url}}" alt="{{$item->image->name}}" srcset="">
+                        </td>
                         <td>
                             @foreach ($item->blog as $blog)
-                                {{$blog->image->url}},
+                                {{$blog->image->url}}
                             @endforeach
                         </td>
                         <td>

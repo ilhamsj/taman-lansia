@@ -16,7 +16,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('pages.admin.article.create');
+        return view('create');
     }
 
     public function store(StoreArticleRequest $request)
