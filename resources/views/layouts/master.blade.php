@@ -25,10 +25,7 @@
                         <a class="nav-link" href="{{route('/')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('blog.index')}}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('user.index')}}">User</a>
+                        <a class="nav-link" href="{{route('/')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.index')}}">Admin</a>

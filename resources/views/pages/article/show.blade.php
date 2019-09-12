@@ -11,7 +11,7 @@
             <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
         
             <h4>{{$item->title}}</h4>
-            <img src="{{$item->image->url}}" alt="" srcset="">
+            <img src="{{$item->image->url}}" alt="" srcset="" class="img-fluid">
         
             <p>
                 {!! $item->description !!}

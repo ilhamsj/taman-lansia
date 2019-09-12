@@ -4,7 +4,7 @@
     
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
         @foreach ($items as $item)
             <div class="col-md-4 mb-4">
                 <div class="card text-left">
