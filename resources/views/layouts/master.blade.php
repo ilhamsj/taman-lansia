@@ -11,12 +11,27 @@
 </head>
 <body>
 
-    <nav>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <div class="container">
-            <a href="{{route('/')}}">Home</a>
-            <a href="{{route('blog.index')}}">Blog</a>
-            <a href="{{route('user.index')}}">User</a>
-            <a href="{{route('admin.index')}}">Admin</a>
+            <a class="navbar-brand" href="{{route('/')}}">{{ENV('APP_NAME')}}</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('/')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('blog.index')}}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('user.index')}}">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.index')}}">Admin</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -28,21 +43,16 @@
             </strong>
         </div>
     </div>
-    @endif        
-    <header>
-        <div class="container">
-            <h1>{{env('app_name')}}</h1>
-            <h2>{{Str::title('mempersiapkan insan utama dan cerdas di usia senja')}}</h2>
-        </div>
-    </header>
-    
-    <main>
+    @endif
+
+    <main class="py-4">
         @yield('content')
     </main>
     
-    <footer>
+    <footer class="py-4 bg-light border-top">
         <div class="container">
-            {{env('app_name')}} {{date('Y m D')}} 
+            <a href="{{env('app_url')}}" class="ml-auto">{{env('app_name')}}</a>
+            {{date('Y')}} 
         </div>
     </footer>
 
@@ -51,6 +61,8 @@
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');
         });
+
+        $(".col-md-4:last-child").attr('class', 'col-md-4');
     </script>
     @stack('scripts')
 </body>

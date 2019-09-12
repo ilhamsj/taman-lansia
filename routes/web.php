@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with([
+        'items' => \App\Article::all()
+    ]);
 })->name('/');
 
 Route::resource('blog', 'BlogController');
