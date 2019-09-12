@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <label for="url">URL</label>
-                    <input type="text" name="url" id="url" class="form-control @error('url') is-invalid  @enderror" value="{{ old('url') ? old('url') : ''}}">
+                    <input type="text" name="url" id="url" class="form-control @error('url') is-invalid  @enderror" value="{{ old('url') ? old('url') : 'holder.js/1280x960?auto=yes&textmode=exact&random=yes'}}">
 
                     @error('url')
                         <span class="invalid-feedback" role="alert">
@@ -89,5 +89,15 @@
             tabsize: 2,
             height: 200
         });
-        </script>
+
+        // $('#title').keypress(function (e) { 
+        //     var x = $(this).val();
+        //     $('#name').val(x);
+        // });
+
+        $('#title').keyup(function (e) { 
+            var x = $(this).val();
+            $('#name').val(x);
+        });
+    </script>
 @endpush

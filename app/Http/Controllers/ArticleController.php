@@ -47,7 +47,7 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        return view('pages.article.show')->with([
+        return view('show')->with([
             'item' => \App\Article::find($id)
         ]);
     }
