@@ -4,16 +4,14 @@
     
 @section('content')
 
+<div class="container">
 @forelse ($items as $item)
-    <h3>
-        <a href="{{ route('blog.show', $item->id) }}">{{$item->article->title}}</a>
-    </h3>
-    {{$item->user->name}} <br/>
+    <h4>{{$item->article->title}}</h4>
     {{$item->category->name}} <br/>
-    {{$item->user->name}} <br/>
     {{$item->image->url}} <br/>
-@empty
-    
-@endforelse
+    @empty
+        Tidak ada post
+    @endforelse
+</div>  
 
 @endsection

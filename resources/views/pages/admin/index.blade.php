@@ -10,21 +10,32 @@
                 <th>User</th>
                 <th>Title</th>
                 <th>Foto</th>
-                <th>Deskripsi</th>
+                <th>ِAlbum</th>
                 <th>Kategori</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($items as $item)
                 <tr>
-                    <td>{{$item->user->name}}</td>
+                    <td>
+                        <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
+                    </td>
                     <td>{{$item->title}}</td>
-                    <td>{{$item->title}}</td>
-                    <td>{{$item->description}}</td>
+                    <td>{{$item->image->url}}</td>
+                    <td>
+                        @foreach ($item->blog as $blog)
+                            {{$blog->image->url}},
+                        @endforeach
+                    </td>
                     <td>
                         @foreach ($item->blog as $blog)
                             {{$blog->category->name}},
                         @endforeach
+                    </td>
+                    <td>
+                        <a href="">Edit</a>
+                        <a href="">Delete</a>
                     </td>
                 </tr>
             @endforeach

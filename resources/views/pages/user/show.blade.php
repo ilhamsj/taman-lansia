@@ -4,14 +4,13 @@
     
 @section('content')
 
-    {{-- <h3>
-        <a href="{{ route('blog.show', $item->id) }}">{{$item->article->title}}</a>
-    </h3>
-    by {{$item->user->name}} <br/>
-    category : {{$item->category->name}} <br/>
-    image : {{$item->image->url}} <br/>
+<div class="container">
+
+    <h4><a href="{{ route('user.show', $item->id) }}">{{$item->name}}</a></h4>
     
-    <p>
-        {{$item->article->description}} 
-    </p> --}}
+    @foreach ($item->article as $article)
+        <h5>{{$article->title}}</h5>
+    @endforeach
+    
+</div> 
 @endsection
