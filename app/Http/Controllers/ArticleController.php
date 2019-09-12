@@ -10,7 +10,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('pages.admin.index')->with([
-            'items' => \App\Article::all()
+            'items' => \App\Article::orderBy('created_at', 'desc')->get()
         ]);
     }
 

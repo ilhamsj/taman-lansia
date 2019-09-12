@@ -29,6 +29,7 @@ class StoreArticleRequest extends FormRequest
             'description' => 'required',
             'name' => 'required',
             'url' => 'required',
+            'category' => 'required',
         ];
     }
 }

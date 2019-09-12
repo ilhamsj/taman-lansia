@@ -13,7 +13,7 @@
                     <h4 class="card-title">
                         <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
                     </h4>
-                    <p class="card-text">{{Str::limit($item->description, 150)}}</p>
+                    <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
                   </div>
                     <div class="card-footer">{{$item->user->name}}</div>
                 </div>
