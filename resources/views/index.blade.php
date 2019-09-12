@@ -11,7 +11,7 @@
                     <a class="btn btn-primary btn-sm" href="{{ route('article.create') }}">Tambah</a>
                 </div>
                 <div class="card-body">
-                    helo
+                    
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
