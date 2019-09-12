@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Images;
+use App\Image;
 use Faker\Generator as Faker;
 
-$factory->define(Images::class, function (Faker $faker) {
+$factory->define(Image::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
         'url' => $faker->imageUrl($width = 640, $height = 480),

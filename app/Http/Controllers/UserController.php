@@ -16,6 +16,8 @@ class UserController extends Controller
     
     public function show($id)
     {
-        
+        return view('pages.user.show')->with([
+            'item' => \App\User::find($id),
+        ]);
     }
 }

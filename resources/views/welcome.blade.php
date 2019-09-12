@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Home')
+@section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
     
 @section('content')
     <div class="container">

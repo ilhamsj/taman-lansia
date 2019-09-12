@@ -26,7 +26,9 @@ class BlogController extends Controller
 
     public function show($id)
     {
-        //
+        return view('pages.blog.show')->with([
+            'item' => \App\Blog::find($id),
+        ]);
     }
 
     public function edit($id)
