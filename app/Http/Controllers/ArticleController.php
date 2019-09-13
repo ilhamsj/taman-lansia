@@ -16,33 +16,39 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('create');
+        return view('create')->with([
+            'category' => \App\Category::all()
+        ]);
     }
 
     public function store(StoreArticleRequest $request)
     {
-        $image = \App\Image::create($request->all());
 
-        $article = \App\Article::create([
-            'user_id' => $request->user_id,
-            'title' => $request->title,
-            'description' => $request->description,
-            'image_id' => $image->id,
-        ]);
+        foreach ($request->name as $cat) {
+            $category = \App\Category::firstOrNew([
+                'name' => $cat
+            ]);
+        }
 
-        $category = \App\Category::create([
-            'name' => $request->category
-        ]);
+        // $image = \App\Image::create($request->all());
+
+        // $article = \App\Article::create([
+        //     'user_id' => $request->user_id,
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'image_id' => $image->id,
+        // ]);
+
         
-        \App\Blog::create([
-            'article_id' => $article->id,
-            'category_id' => $category->id,
-            'image_id' => $image->id,
-        ]);
+        // \App\Blog::create([
+        //     'article_id' => $article->id,
+        //     'category_id' => $category->id,
+        //     'image_id' => $image->id,
+        // ]);
         
-        return redirect()->route('admin.index')->with([
-            'status' => 'Create Success'
-        ]);
+        // return redirect()->route('admin.index')->with([
+        //     'status' => 'Create Success'
+        // ]);
     }
 
     public function show($id)
@@ -61,7 +67,12 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
+        foreach ($request->category as $key => $value) {
+            echo $value . ',';
+        }
+        // dd(count($request->category));
+
     }
 
     public function destroy($id)

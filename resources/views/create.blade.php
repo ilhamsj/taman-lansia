@@ -47,10 +47,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Image Name</label>
-                            <input type="text" name="name" id="name" class="form-control @error('name') is-invalid  @enderror" value="{{ old('name') ? old('name') : ''}}">
+                            <label for="alt">Image alt</label>
+                            <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : ''}}">
 
-                            @error('name')
+                            @error('alt')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -69,10 +69,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="category">Category</label>
-                            <input type="text" name="category" id="category" class="form-control @error('category') is-invalid  @enderror" value="{{ old('category') ? old('category') : ''}}">
+                            <label for="name">name</label>
 
-                            @error('category')
+                            <select multiple name="name[]" id="name" class="form-control @error('name') is-invalid  @enderror" >
+                                @foreach ($category as $item)
+                                    <option value="{{$item->name}}">
+                                        {{$item->name}}
+                                    </option>
+                                @endforeach
+                            </select>
+
+                            @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -102,9 +109,18 @@
 
         $('#title').keyup(function (e) { 
             var x = $(this).val();
-            $('#name').val(x);
+            $('#alt').val(x);
         });
 
         $("form .form-group").first().hide();
+        $("#title").val('Ini adalah title');
+        $("#description").val('Ini adalah deskripsi');
+
+        $(document).ready(function() {
+            $('select').select2({
+                theme: 'bootstrap4',
+                tags: true
+            });
+        });
     </script>
 @endpush
