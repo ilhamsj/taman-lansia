@@ -21,7 +21,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function store(StoreArticleRequest $request)
+    public function store(Request $request)
     {
         $image = \App\Image::create($request->all());
 
@@ -34,10 +34,15 @@ class ArticleController extends Controller
 
         foreach ($request->name as $category) {
 
-            
-            $cat = \App\Category::create([
-                'name' => $category
-            ]);
+            $cat = \App\Category::where('name', $category)->get();
+
+            if ($cat->count() == null) {
+                $cat = \App\Category::create([
+                    'name' => $category
+                ]);
+            } else {
+                $cat = $cat->first();
+            }
 
             \App\Blog::create([
                 'article_id' => $article->id,
