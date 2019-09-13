@@ -23,32 +23,32 @@ class ArticleController extends Controller
 
     public function store(StoreArticleRequest $request)
     {
+        $image = \App\Image::create($request->all());
 
-        foreach ($request->name as $cat) {
-            $category = \App\Category::firstOrNew([
-                'name' => $cat
+        $article = \App\Article::create([
+            'user_id' => $request->user_id,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image_id' => $image->id,
+        ]);
+
+        foreach ($request->name as $category) {
+
+            
+            $cat = \App\Category::create([
+                'name' => $category
+            ]);
+
+            \App\Blog::create([
+                'article_id' => $article->id,
+                'category_id' => $cat->id,
+                'image_id' => $image->id,
             ]);
         }
-
-        // $image = \App\Image::create($request->all());
-
-        // $article = \App\Article::create([
-        //     'user_id' => $request->user_id,
-        //     'title' => $request->title,
-        //     'description' => $request->description,
-        //     'image_id' => $image->id,
-        // ]);
-
         
-        // \App\Blog::create([
-        //     'article_id' => $article->id,
-        //     'category_id' => $category->id,
-        //     'image_id' => $image->id,
-        // ]);
-        
-        // return redirect()->route('admin.index')->with([
-        //     'status' => 'Create Success'
-        // ]);
+        return redirect()->route('admin.index')->with([
+            'status' => 'Create Success'
+        ]);
     }
 
     public function show($id)

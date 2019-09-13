@@ -68,6 +68,10 @@
                 $(this).children().last().hide('100');
             }
         );
+
+        $(document).ready(function() {
+            $('table').DataTable();
+        } );
     </script>
     @stack('scripts')
 </body>

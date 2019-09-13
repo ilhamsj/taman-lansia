@@ -21,7 +21,7 @@ class CreateBlogsTable extends Migration
                 ->on('articles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->bigInteger('category_id')->unsigned()->index();
+            $table->bigInteger('category_id')->nullable()->unsigned()->index();
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')

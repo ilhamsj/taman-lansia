@@ -15,6 +15,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
+                                    <th>ID</th>
                                     <th>User</th>
                                     <th>Title</th>
                                     <th>Foto</th>
@@ -26,6 +27,7 @@
                             <tbody>
                                 @foreach ($items as $item)
                                     <tr>
+                                        <td>{{$item->id}}</td>
                                         <td>
                                             <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
                                         </td>
@@ -35,7 +37,7 @@
                                         </td>
                                         <td>
                                             @foreach ($item->blog as $blog)
-                                                {{$blog->image->url}}
+                                                <img class="img-fluid" data-src="{{$blog->image->url}}" alt="{{$blog->image->name}}" srcset="">
                                             @endforeach
                                         </td>
                                         <td>
@@ -43,9 +45,10 @@
                                                 {{$blog->category->name}},
                                             @endforeach
                                         </td>
-                                        <td>
-                                            <a class="btn btn-warning btn-sm mb-2" href="{{ route('article.edit', $item->id) }}">Edit</a>
-                                            <a class="btn btn-danger btn-sm" href="{{ route('article.edit', $item->id) }}">Delete</a>
+                                        <td class="text-center">
+                                            <a class="btn btn-outline-danger btn-sm" href="{{ route('article.edit', $item->id) }}">
+                                                Delete
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

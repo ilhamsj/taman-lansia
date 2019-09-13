@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid  @enderror">{{ old('description') ? old('description') : ''}}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid  @enderror">{{ old('description') ? old('description') : \Faker\Factory::create()->randomHtml(2,3)}}</textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             <label for="alt">Image alt</label>
-                            <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : ''}}">
+                            <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : \Faker\Factory::create()->word()}}">
 
                             @error('alt')
                                 <span class="invalid-feedback" role="alert">
