@@ -27,7 +27,7 @@
 
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid  @enderror" value="{{ old('title') ? old('title') : ''}}">
+                            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid  @enderror" value="{{ old('title') ? old('title') : \Faker\Factory::create()->realText($maxNbChars=50)}}">
 
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid  @enderror">{{ old('description') ? old('description') : \Faker\Factory::create()->randomHtml(2,3)}}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid  @enderror">{{ old('description') ? old('description') : \Faker\Factory::create()->realText()}}</textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -113,8 +113,6 @@
         });
 
         $("form .form-group").first().hide();
-        $("#title").val('Ini adalah title');
-        $("#description").val('Ini adalah deskripsi');
 
         $(document).ready(function() {
             $('select').select2({
