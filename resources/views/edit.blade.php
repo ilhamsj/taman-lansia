@@ -99,17 +99,6 @@
 
 @push('scripts')
     <script>
-        $('#description').summernote({
-            placeholder: 'Hello bootstrap 4',
-            tabsize: 2,
-            height: 200
-        });
-
-        $('#title').keyup(function (e) { 
-            var x = $(this).val();
-            $('#name').val(x);
-        });
-
         $("form .form-group").first().hide();
     </script>
 @endpush

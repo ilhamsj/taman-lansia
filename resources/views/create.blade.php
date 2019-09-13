@@ -101,24 +101,6 @@
 
 @push('scripts')
     <script>
-        $('#description').summernote({
-            placeholder: 'Hello bootstrap 4',
-            tabsize: 2,
-            height: 200
-        });
-
-        $('#title').keyup(function (e) { 
-            var x = $(this).val();
-            $('#alt').val(x);
-        });
-
         $("form .form-group").first().hide();
-
-        $(document).ready(function() {
-            $('select').select2({
-                theme: 'bootstrap4',
-                tags: true
-            });
-        });
     </script>
 @endpush

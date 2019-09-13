@@ -71,7 +71,20 @@
 
         $(document).ready(function() {
             $('table').DataTable();
-        } );
+        });
+
+        $(document).ready(function() {
+            $('select').select2({
+                theme: 'bootstrap4',
+                tags: true
+            });
+        });
+
+        $('#description').summernote({
+            placeholder: 'Hello bootstrap 4',
+            tabsize: 2,
+            height: 200
+        });
     </script>
     @stack('scripts')
 </body>
