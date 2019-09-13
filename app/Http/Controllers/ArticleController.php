@@ -21,7 +21,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {
         $image = \App\Image::create($request->all());
 
