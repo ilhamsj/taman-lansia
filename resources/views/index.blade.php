@@ -46,8 +46,8 @@
                                             @endforeach
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-outline-danger btn-sm" href="{{ route('article.edit', $item->id) }}">
-                                                Delete
+                                            <a class="btn btn-warning btn-sm" href="{{ route('article.edit', $item->id) }}">
+                                                Edit
                                             </a>
                                         </td>
                                     </tr>

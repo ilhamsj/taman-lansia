@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="alt">Image alt</label>
+                            <label for="alt">Image Name</label>
                             <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : \Faker\Factory::create()->word()}}">
 
                             @error('alt')
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="url">URL</label>
+                            <label for="url">Image URL</label>
                             <input type="text" name="url" id="url" class="form-control @error('url') is-invalid  @enderror" value="{{ old('url') ? old('url') : 'holder.js/1280x960?auto=yes&textmode=exact&random=yes'}}">
 
                             @error('url')
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name">name</label>
+                            <label for="name">Category</label>
 
                             <select multiple name="name[]" id="name" class="form-control @error('name') is-invalid  @enderror" >
                                 @foreach ($category as $item)

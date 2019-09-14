@@ -65,19 +65,28 @@ class ArticleController extends Controller
 
     public function edit($id)
     {
+        $item = \App\Article::find($id);
         return view('edit')->with([
-            'item' => \App\Article::find($id)
+            'item' => $item
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreArticleRequest $request, $id)
     {
-        // dd($request->all());
-        foreach ($request->category as $key => $value) {
-            echo $value . ',';
-        }
-        // dd(count($request->category));
+        $article = \App\Article::find($id);
+        $image = \App\Image::find($article->image->id);
+        
+        // foreach ($article->blog as $blog) {
+        //     // echo $blog->id;
+        //     // echo $blog->category->name;
+        // }
+        
+        $article->update($request->all());
+        $image->update($request->all());
 
+        return redirect()->route('admin.index')->with([
+            'status' => 'Update Success'
+        ]);
     }
 
     public function destroy($id)
