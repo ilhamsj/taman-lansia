@@ -76,11 +76,6 @@ class ArticleController extends Controller
         $article = \App\Article::find($id);
         $image = \App\Image::find($article->image->id);
         
-        // foreach ($article->blog as $blog) {
-        //     // echo $blog->id;
-        //     // echo $blog->category->name;
-        // }
-        
         $article->update($request->all());
         $image->update($request->all());
 
