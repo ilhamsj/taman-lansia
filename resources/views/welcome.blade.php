@@ -90,6 +90,5 @@
 @push('scripts')
     <script>
         $('#Tujuan').attr('class', 'bg-ws');
-        $('#Standar').attr('class', 'bg-ws');
     </script>
 @endpush

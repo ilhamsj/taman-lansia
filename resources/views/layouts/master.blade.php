@@ -39,12 +39,15 @@
         .bg-ws {
             background: #F8F9FA;
         } 
+
+        .navbar-expand-sm.scrolled{
+            background:#0000;
+        }
     </style>
     @stack('styles') 
 </head>
 <body>
-
-    <nav class="navbar fixed-top navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-default fixed-top navbar-expand-sm navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">AN-NABA</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,6 +127,10 @@
             placeholder: 'Hello bootstrap 4',
             tabsize: 2,
             height: 500
+        });
+
+        $(window).scroll(function(){
+            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
         });
     </script>
     @stack('scripts')
