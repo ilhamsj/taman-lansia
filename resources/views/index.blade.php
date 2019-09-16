@@ -13,6 +13,14 @@
     </div>
 </div>
 
+@if (session('status'))
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        {{ session('status') }}
+    </div>
+</div>
+@endif
+
 <div class="container py-4">
     <div class="row">
         <div class="col">

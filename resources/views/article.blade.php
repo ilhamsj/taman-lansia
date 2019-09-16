@@ -15,7 +15,7 @@
 </div>
 
 <div class="container py-4">
-    <div class="row d-flex align-items-stretch">
+    <div class="row align-items-center">
     @foreach ($items as $item)
         <div class="col-md-4 mb-4">
             <div class="card text-left">

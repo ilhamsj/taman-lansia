@@ -69,14 +69,7 @@
         </div>
     </nav>
 
-    <main class="">
-        @if (session('status'))
-        <div class="container">
-            <div class="alert alert-primary" role="alert">
-                {{ session('status') }}
-            </div>
-        </div>
-        @endif
+    <main>
         @yield('content')
     </main>
     
@@ -85,7 +78,7 @@
             <div class="row jusitfy-content-between  align-items-center">
                 <div class="col">
                     <h5 class="text-white"><a class="text-white" href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h5>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam et ipsum facere dolores modi maxime minima necessitatibus
+                    Mempersiapkan Insan “Utama Dan Cerdas Di Usia Senja”
                 </div>
                 <div class="col text-right">
                     <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>

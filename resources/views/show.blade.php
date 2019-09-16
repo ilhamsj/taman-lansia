@@ -25,15 +25,12 @@
             <p class="lead">
                 {!! $item->description !!}
             </p>
-            @foreach ($item->blog as $blog)
-                <a href="">{{$blog->category->name}},</a>
-            @endforeach
-            <div class="row">
+
+            <div class="mt-4">
+                <h3>Kategori</h3>
                 @foreach ($item->blog as $blog)
-                    <div class="col">
-                        <img class="img-fluid" data-src="{{$blog->image->url}}" alt="{{$blog->image->name}}" srcset="">
-                    </div>
-                    @endforeach
+                    <a href="">{{$blog->category->name}},</a>
+                @endforeach
             </div>
         </div>
     </div>
