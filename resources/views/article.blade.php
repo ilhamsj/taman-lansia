@@ -45,7 +45,7 @@
 
         #blog {
             background: chartreuse;
-            background-image: url('https://images.unsplash.com/photo-1508963493744-76fce69379c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+            background-image: url('image/photo-1508963493744-76fce69379c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
             background-size: cover;
         }
     </style>
