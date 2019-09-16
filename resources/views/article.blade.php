@@ -3,13 +3,15 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
     
 @section('content')
-<div class="container">
-    <div class="row text-center h-100 justify-content-center align-items-center flex-row">
-        <div class="col">
-            <h1>Blog</h1>
-            <p class="lead">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
-            </p>
+<div id="blog">
+    <div class="container">
+        <div class="row text-center h-50 justify-content-center align-items-center flex-row">
+            <div class="col">
+                <h1>Blog</h1>
+                <p class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -40,15 +42,17 @@
         {
             display: none;
         }
+
+        #blog {
+            background: chartreuse;
+            background-image: url('https://images.unsplash.com/photo-1508963493744-76fce69379c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+            background-size: cover;
+        }
     </style>
 @endpush
 
 @push('scripts')
     <script>
-        // $("div").first().attr("class", "mt-4");
-        console.log($("main").scrollTop());
-        if ($("nav").scrollTop() == null) {
-            
-        }
+
     </script>
 @endpush
