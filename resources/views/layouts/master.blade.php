@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
+    <link rel="stylesheet" href="css/app.css">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -93,7 +94,8 @@
         </div>
     </footer>
 
-    <script src="{{asset('js/app.js')}}"></script>
+    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
+    <script src="js/app.js"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');
