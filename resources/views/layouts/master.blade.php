@@ -88,10 +88,10 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam et ipsum facere dolores modi maxime minima necessitatibus
                 </div>
                 <div class="col text-right">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>

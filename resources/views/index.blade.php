@@ -3,7 +3,17 @@
 @section('title', 'Admin')
     
 @section('content')
-<div class="container">
+
+<div class="">
+    <div class="container">
+        <div class="row text-center h-50 justify-content-center align-items-center flex-row">
+            <div class="col">
+            <h1>Hi, <span>John Doer</span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
     <div class="row">
         <div class="col">
             <div class="card">
@@ -31,7 +41,9 @@
                                         <td>
                                             <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
                                         </td>
-                                        <td>{{$item->title}}</td>
+                                        <td>
+                                            <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                                        </td>
                                         <td>
                                             <img class="img-fluid" data-src="{{$item->image->url}}" alt="{{$item->image->name}}" srcset="">
                                         </td>

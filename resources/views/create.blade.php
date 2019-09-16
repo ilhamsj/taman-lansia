@@ -4,7 +4,16 @@
     
 @section('content')
 
-<div class="container">
+<div class="">
+    <div class="container">
+        <div class="row text-center h-50 justify-content-center align-items-center flex-row">
+            <div class="col">
+            <h1>Hi, <span>John Doer</span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm">
@@ -102,5 +111,9 @@
 @push('scripts')
     <script>
         $("form .form-group").first().hide();
+
+        $('#title').keyup(function (e) { 
+            $("h1").html($('#title').val());
+        });
     </script>
 @endpush
