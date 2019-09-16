@@ -46,7 +46,7 @@
     <div class="container">
         <div class="row h-100 justify-content-center align-items-center flex-row">
             <div class="col-md-12 text-center">
-                <h5>{{$key}}</h5>
+                <h2>{{$key}}</h2>
                 @if (count($value) == 1)
                     @foreach ($value as $k => $v)
                     <p class="display-6">
@@ -56,7 +56,7 @@
                 @else
                 <div class="row justify-content-center align-items-center flex-row">
                     @foreach ($value as $k => $v)
-                    <div class="col-md">
+                    <div class="col-md align-self-stretch">
                         <div class="card">
                             <div class="card-body">
                                 <p class="lead">

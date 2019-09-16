@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
-    {{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -77,25 +76,26 @@
         @yield('content')
     </main>
     
+    
+
     <footer class="py-4 border-top bg-dark text-muted">
         <div class="container">
             <div class="row jusitfy-content-between  align-items-center">
                 <div class="col">
-                    <h5 class="text-white"><a class="text-white" href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h5>
+                    <h5 class="text-muted"><a class="text-muted" href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h5>
                     Mempersiapkan Insan “Utama Dan Cerdas Di Usia Senja”
                 </div>
                 <div class="col text-right">
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href=""><i data-feather="facebook"></i></a>
+                    <a href=""><i data-feather="twitter"></i></a>
+                    <a href=""><i data-feather="instagram"></i></a>
+                    <a href=""><i data-feather="linkedin"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
-    <script src="js/app.js"></script>
+    <script src="{{asset('js/app.js')}}"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');
