@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('title', 100);
+            $table->string('title');
             $table->text('description');
             $table->timestamps();
         });

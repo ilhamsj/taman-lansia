@@ -32,6 +32,10 @@
             min-height: 50vh;
         }
 
+        .h-25 {
+            min-height: 25vh;
+        }
+
         .display-5 {
             font-size: 3rem;
             font-weight: lighter;
@@ -78,11 +82,11 @@
     
     
 
-    <footer class="py-4 border-top bg-dark text-muted">
+    <footer class="py-4 bg-ws border-top">
         <div class="container">
-            <div class="row jusitfy-content-between  align-items-center">
+            <div class="row h-25 align-items-center">
                 <div class="col">
-                    <h5 class="text-muted"><a class="text-muted" href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h5>
+                    <h6><a href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h6>
                     Mempersiapkan Insan “Utama Dan Cerdas Di Usia Senja”
                 </div>
                 <div class="col text-right">
