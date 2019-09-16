@@ -79,19 +79,6 @@
         .card-footer {
             display: none;
         }
-
-        .display-5 {
-            font-size: 3rem;
-            font-weight: lighter;
-        }
-
-        .h-100 {
-            min-height: 100vh;
-        }
-
-        .bg-ws {
-            background: #F8F9FA;
-        } 
     </style>
 @endpush
 

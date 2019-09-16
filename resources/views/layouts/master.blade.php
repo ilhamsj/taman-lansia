@@ -23,6 +23,22 @@
             font-size: 0.9rem;
             font-weight: 500
         }
+
+        .h-100 {
+            min-height: 100vh;
+        }
+
+        .h-50 {
+            min-height: 50vh;
+        }
+
+        .display-5 {
+            font-size: 3rem;
+            font-weight: lighter;
+        }
+        .bg-ws {
+            background: #F8F9FA;
+        } 
     </style>
     @stack('styles') 
 </head>
@@ -38,6 +54,12 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('article.index')}}">BLOG <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.index')}}">KEGIATAN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.index')}}">#AGENDA</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.index')}}">ADMIN</a>
