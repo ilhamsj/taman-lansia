@@ -9,7 +9,10 @@
     <div class="container">
         <div class="row text-center h-50 justify-content-center align-items-center flex-row">
             <div class="col">
-                <h1>{{Str::title($items->first()->name)}} : {{count($item->blog)}}</h1>
+                <h1>{{Str::title($items->first()->name)}}</h1>
+                <p class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                </p>
             </div>
         </div>
     </div>

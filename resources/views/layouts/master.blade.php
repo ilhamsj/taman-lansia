@@ -43,7 +43,20 @@
 
         .bg-ws {
             background: #F8F9FA;
-        } 
+        }
+
+        .bg-dark-sm {
+            background: #181818;
+            color: #959595;
+        }
+
+        .text-light-sm {
+            color: #f9f9f9!important
+        }
+
+        .bg-dark-sm a {
+            color: #959595;
+        }
 
     </style>
     @stack('styles') 
@@ -89,25 +102,54 @@
         @yield('content')
     </main>
     
-    
+    @php
+        $tentang = ['Tujuan', 'Motto & Motivasi', 'Perkenalan', 'Sasaran', 'Standar Pengasuhan', 'Target', 'FAQs'];
+        $contact = [
+            'Contact' => 
+            [
+                'name' => 'Agung',
+                'telp' => '081802612341',
+            ],
+            [
+                'name' => 'Yadi',
+                'telp' => '08129801782',
+            ],
+            [
+                'name' => 'Anto',
+                'telp' => '083869476737',
+            ],
+        ];
+    @endphp
 
-    <footer class="py-4 bg-ws border-top">
+    <footer class="py-4 bg-ws border-top bg-dark-sm">
         <div class="container">
-            <div class="row h-25 align-items-center">
-                <div class="col-md-12 mb-4">
-                    {{-- @foreach ($categories as $item)
-                        <a href="{{route('kategori.show', $item->id)}}">{{Str::title($item->name)}}</a>
-                    @endforeach --}}
+            <div class="row">
+                <div class="col-md mb-4">
+                    <h5 class="text-light-sm">Tentang An-Naba</h5>
+                    @foreach ($tentang as $key)
+                        <h6><a href="">{{$key}}</a></h6>
+                    @endforeach
                 </div>
+                <div class="col-md mb-4 text-light-sm">
+                    <h5>Contact Us</h5>
+                    @foreach ($contact as $key => $value)
+                        <h6><a href="">
+                            {{$value['name']}}
+                            {{$value['telp']}}
+                        </a></h6>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row align-items-center">
                 <div class="col-md">
-                    <h6><a href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h6>
-                    Mempersiapkan Insan “Utama Dan Cerdas Di Usia Senja”
+                    Mempersiapkan Insan Utama dan Cerdas di Usia Senja |
+                    <a href="{{env('app_url')}}" class="text-light">{{env('app_name')}}</a> {{date('Y')}}
                 </div>
                 <div class="col-md text-right">
-                    <a href=""><i data-feather="facebook"></i></a>
-                    <a href=""><i data-feather="twitter"></i></a>
-                    <a href=""><i data-feather="instagram"></i></a>
-                    <a href=""><i data-feather="linkedin"></i></a>
+                    <a href="" class="text-light-sm"><i data-feather="facebook"></i></a>
+                    <a href="" class="text-light-sm"><i data-feather="twitter"></i></a>
+                    <a href="" class="text-light-sm"><i data-feather="instagram"></i></a>
+                    <a href="" class="text-light-sm"><i data-feather="linkedin"></i></a>
                 </div>
             </div>
         </div>

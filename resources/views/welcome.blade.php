@@ -39,53 +39,7 @@
 
 @section('content')
 
-@foreach ($items as $key => $value)
-<div id="{{Str::slug($key)}}">
-    <div class="container">
-        <div class="row h-50 justify-content-center align-items-center flex-row-reverse">
-            <div class="col-md-4">
-                <img class="img-fluid" src="images/undraw_web_developer_p3e5.svg" alt="" srcset="">
-            </div>
-            <div class="col-md-5">
-                <h2>{{$key}}</h2>
-                @foreach ($value as $k => $v)
-                <p class="lead">
-                    {{Str::title($v)}}
-                </p>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
-
-    <div class="container">
-        <div class="row h-50 text-center justify-content-center align-items-center flex-row-reverse">
-            <div class="col-md-9">
-                <h2>Sasaran</h2>
-                <div class="row align-items-center flex-row-reverse text-center">
-                    @foreach ($items['Sasaran'] as $item)
-                        <div class="col-md">
-                            <p class="lead">{{$item}}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row h-100 justify-content-center align-items-center flex-row-reverse">
-            <div class="col-md-9">
-                <h2 class="text-center">Standar Pengasuhan</h2>
-                    @foreach ($items['Standar Pengasuhan'] as $item)
-                        <p class="lead">{{Str::title($item)}}</p>
-                    @endforeach
-            </div>
-        </div>
-    </div>
-
-<div id="faq">
+    <div id="faq">
     <div class="container">
         <div class="row mb-4 h-100 justify-content-center align-items-center flex-row-reverse">
             <div class="col-md-9">
@@ -128,10 +82,6 @@
 
         .bg-img {
             background-image: url();
-        }
-
-        .border-bottom-2px {
-            color: tomato
         }
     </style>
 @endpush
