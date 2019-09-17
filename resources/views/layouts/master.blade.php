@@ -45,14 +45,11 @@
             background: #F8F9FA;
         } 
 
-        .navbar-expand-sm.scrolled{
-            background:#0000;
-        }
     </style>
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default fixed-top navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">AN-NABA</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,8 +66,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.index')}}">#AGENDA</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">ADMIN</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ACCOUNT
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @guest
+                                <a class="dropdown-item" href="#">LOGIN</a>
+                                <a class="dropdown-item" href="#">REGISTER</a>
+                            @else
+                                <a class="dropdown-item" href="#">PROFILE</a>
+                                <a class="dropdown-item" href="#">DASHBOARD</a>
+                            @endguest
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -86,11 +94,16 @@
     <footer class="py-4 bg-ws border-top">
         <div class="container">
             <div class="row h-25 align-items-center">
-                <div class="col">
+                <div class="col-md-12 mb-4">
+                    {{-- @foreach ($categories as $item)
+                        <a href="{{route('kategori.show', $item->id)}}">{{Str::title($item->name)}}</a>
+                    @endforeach --}}
+                </div>
+                <div class="col-md">
                     <h6><a href="{{env('app_url')}}">{{env('app_name')}}</a> {{date('Y')}}</h6>
                     Mempersiapkan Insan “Utama Dan Cerdas Di Usia Senja”
                 </div>
-                <div class="col text-right">
+                <div class="col-md text-right">
                     <a href=""><i data-feather="facebook"></i></a>
                     <a href=""><i data-feather="twitter"></i></a>
                     <a href=""><i data-feather="instagram"></i></a>
@@ -127,4 +140,4 @@
     </script>
     @stack('scripts')
 </body>
-</html>s
+</html>

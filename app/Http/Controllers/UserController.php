@@ -23,8 +23,8 @@ class UserController extends Controller
 
     public function kegiatan()
     {
-        return view('kegiatan')->with([
-            'item' => \App\Category::where('name', 'kegiatan')->first()
+        return view('category.show')->with([
+            'items' => \App\Category::where('name', 'kegiatan')->get()
         ]);
     }
 }

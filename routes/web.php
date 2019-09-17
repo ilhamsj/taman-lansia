@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome')->with([
-        'items' => \App\Article::all()
+        'categories' => \App\Category::all()
     ]);
 })->name('/');
 

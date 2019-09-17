@@ -1,9 +1,3 @@
-{{-- {{$item->name}} <br/>
-
-@foreach ($item->blog as $i)
-    {{$i->article->title}}
-@endforeach --}}
-
 @extends('layouts.master')
 
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
@@ -13,7 +7,7 @@
     <div class="container">
         <div class="row text-center h-50 justify-content-center align-items-center flex-row">
             <div class="col">
-                <h1>Blog</h1>
+                <h1>{{Str::title($items->first()->name)}}</h1>
                 <p class="lead">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
                 </p>
@@ -24,20 +18,22 @@
 
 <div class="container py-4">
     <div class="row align-items-center">
-    @foreach ($item->blog as $blog)
-    <div class="col-md-4 mb-4">
-            <div class="card text-left">
-                <img class="card-img-top" data-src="{{$blog->article->image->url}}" alt="{{$blog->article->image->name}}">
-                <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{route('article.show', $blog->article->id)}}">{{$blog->article->title}}</a>
-                </h4>
-                <p class="card-text">{!! Str::limit($blog->article->description, 100) !!}</p>
+        @foreach ($items as $item)
+        @foreach ($item->blog as $blog)
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" data-src="{{$blog->article->image->url}}" alt="{{$blog->article->image->name}}">
+                    <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{{route('article.show', $blog->article->id)}}">{{$blog->article->title}}</a>
+                    </h4>
+                    <p class="card-text">{!! Str::limit($blog->article->description, 100) !!}</p>
+                    </div>
+                    <div class="card-footer">{{$blog->article->user->name}}</div>
                 </div>
-                <div class="card-footer">{{$blog->article->user->name}}</div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
+        @endforeach
     </div>
 </div>
 @endsection

@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         return view('category.show')->with([
-            'item' => \App\Category::where('name', $id)->first()
+            'items' => \App\Category::where('id', $id)->get()
         ]);
     }
 
