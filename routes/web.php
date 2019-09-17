@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome')->with([
-        'categories' => \App\Category::all()
+        'items' => \App\Article::orderBy('created_at', 'desc')->get()
     ]);
 })->name('/');
 

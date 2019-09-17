@@ -124,6 +124,9 @@
     <footer class="py-4 bg-ws border-top bg-dark-sm">
         <div class="container">
             <div class="row">
+                <div class="col-md-6 mb-4">
+                    Mempersiapkan Insan Utama dan Cerdas di Usia Senja
+                </div>
                 <div class="col-md mb-4">
                     <h5 class="text-light-sm">Tentang An-Naba</h5>
                     @foreach ($tentang as $key)
@@ -133,17 +136,22 @@
                 <div class="col-md mb-4 text-light-sm">
                     <h5>Contact Us</h5>
                     @foreach ($contact as $key => $value)
-                        <h6><a href="">
-                            {{$value['name']}}
-                            {{$value['telp']}}
-                        </a></h6>
+                        <h6>
+                            <a href="">
+                                {{$value['telp']}}
+                            </a>
+                        </h6>
                     @endforeach
                 </div>
             </div>
+        </div>
+    </footer>
+    
+    <footer class="py-4 text-light" style="background-color:#181818ed">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-md">
-                    Mempersiapkan Insan Utama dan Cerdas di Usia Senja |
-                    <a href="{{env('app_url')}}" class="text-light">{{env('app_name')}}</a> {{date('Y')}}
+                    {{env('app_name')}} {{date('Y')}}
                 </div>
                 <div class="col-md text-right">
                     <a href="" class="text-light-sm"><i data-feather="facebook"></i></a>
@@ -154,6 +162,7 @@
             </div>
         </div>
     </footer>
+    
 
     <script src="{{asset('js/app.js')}}"></script>
     <script>

@@ -1,9 +1,5 @@
-@extends('layouts.master')
-
-@section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
-    
 @php
-    $items = [
+    $about = [
         'Tujuan' => [
             '0' => 'Memberi wadah serta mengkondisikan perangkat untuk menata usia senja yang lebih berkualitas, baik dalam beribadah maupaun mengoptimalkan kemanfaatan hidupnya',
         ],
@@ -37,74 +33,68 @@
     ];
 @endphp
 
+@extends('layouts.master')
+@section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
-
-    <div id="faq">
-    <div class="container">
-        <div class="row mb-4 h-100 justify-content-center align-items-center flex-row-reverse">
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-body border-bottom">
-                        <h4>FAQ</h4>
-                    </div>
-                    @foreach ($items as $key => $value)
-                        <div class="card-header">
-                            {{$key}}
-                        </div>
-                        <div class="card-body border-bottom">
-                            <h4 class="card-title">{{$key}}</h4>
-                            <p class="card-text">
-                                <ul>
-                                    @foreach ($value as $k => $v)
-                                    <li>
-                                        {!!$v!!}
-
-                                    </li>
-
-                                    @endforeach
-                                </ul>
-                            </p>
-                        </div>
-                    @endforeach
+    <div id="blog">
+        <div class="container">
+            <div class="row text-center h-100 justify-content-center align-items-center flex-row">
+                <div class="col">
+                    <h1>Welcome</h1>
+                    <p class="lead">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="container py-4">
+        <div class="row align-items-center">
+        @foreach ($items as $item)
+            <div class="col-md-4 mb-4">
+                <div class="card text-left">
+                    <img class="card-img-top" data-src="{{$item->image->url}}" alt="{{$item->image->name}}">
+                    <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                    </h4>
+                    <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
+                    </div>
+                    <div class="card-footer">{{$item->user->name}}</div>
+                </div>
+            </div>
+        @endforeach
+        </div>
+    </div>
 @endsection
 
 @push('styles')
     <style>
-        .card-footer {
+        .card-footer 
+        {
             display: none;
         }
 
-        .bg-img {
-            background-image: url();
+        #blog {
+            background: chartreuse;
+            background-image: url('images/photo-1508963493744-76fce69379c0.jpg');
+            background-size: cover;
         }
     </style>
 @endpush
 
 @push('scripts')
     <script>
-        $('#tujuan .container .row').attr('class', 'row h-100 justify-content-center align-items-center flex-row-reverse');
-        $('#perkenalan .container .row').attr('class', 'row h-100 justify-content-center align-items-center flex-row');
-        $('#perkenalan .container .row .col-md-5').attr('class', 'col-md-9');
-        $('#perkenalan .container .row .col-md-4').remove();
-        $('#sasaran').remove();
-        $('#standar-pengasuhan').remove();
-
-        $("h2").attr("class", "py-2 border-bottom-2px");
-
-        $(".card-header").click(function (e) { 
-            e.preventDefault();
-            $(this).next().slideToggle();
-        });
-
-        $('#faq .container .row .col-md-9 .card .card-body').hide()
-        $('#faq .container .row .col-md-9 .card .card-body').first().show()
-
-
+        $(".card").hover(
+            function () {
+                $(this).attr("class", "card shadow");
+                $(this).children().last().show('100');
+            },
+            function () {
+                $(this).attr("class", "card");
+                $(this).children().last().hide('100');
+            }
+        );
     </script>
 @endpush
