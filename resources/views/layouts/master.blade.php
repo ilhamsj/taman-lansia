@@ -61,10 +61,10 @@
                         <a class="nav-link" href="{{route('article.index')}}">BLOG <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('kegiatan')}}">KEGIATAN</a>
+                        <a class="nav-link" href="{{route('kategori.show', 'kegiatan')}}">KEGIATAN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">#AGENDA</a>
+                        <a class="nav-link" href="{{route('kategori.show', 'agenda')}}">#AGENDA</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,6 +136,11 @@
             placeholder: 'Hello bootstrap 4',
             tabsize: 2,
             height: 500
+        });
+
+        $('div').scroll(function () { 
+            console.log('scroll');
+            
         });
     </script>
     @stack('scripts')

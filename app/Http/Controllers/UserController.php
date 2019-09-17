@@ -20,11 +20,4 @@ class UserController extends Controller
             'item' => \App\User::find($id),
         ]);
     }
-
-    public function kegiatan()
-    {
-        return view('category.show')->with([
-            'items' => \App\Category::where('name', 'kegiatan')->get()
-        ]);
-    }
 }

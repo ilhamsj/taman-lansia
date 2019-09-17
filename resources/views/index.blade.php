@@ -62,7 +62,7 @@
                                         </td>
                                         <td>
                                             @foreach ($item->blog as $blog)
-                                                <a href="{{route('kategori.show', $blog->category->id)}}">{{$blog->category->name}}</a>
+                                                <a href="{{route('kategori.show', $blog->category->name)}}">{{$blog->category->name}}</a>
                                             @endforeach
                                         </td>
                                         <td class="text-center">
