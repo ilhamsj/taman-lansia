@@ -13,6 +13,11 @@
             font-weight: lighter;
         }
 
+        .display-5 {
+            font-size: 3rem;
+            font-weight: lighter;
+        }
+
         .navbar-toggler {
             border: none;
         }
@@ -36,10 +41,6 @@
             min-height: 25vh;
         }
 
-        .display-5 {
-            font-size: 3rem;
-            font-weight: lighter;
-        }
         .bg-ws {
             background: #F8F9FA;
         } 
@@ -107,17 +108,6 @@
 
         $(".col-md-4:last-child").attr('class', 'col-md-4');
 
-        $(".card").hover(
-            function () {
-                $(this).attr("class", "card shadow");
-                $(this).children().last().show('100');
-            },
-            function () {
-                $(this).attr("class", "card");
-                $(this).children().last().hide('100');
-            }
-        );
-
         $(document).ready(function() {
             $('table').DataTable();
         });
@@ -133,10 +123,6 @@
             placeholder: 'Hello bootstrap 4',
             tabsize: 2,
             height: 500
-        });
-
-        $(window).scroll(function(){
-            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
         });
     </script>
     @stack('scripts')

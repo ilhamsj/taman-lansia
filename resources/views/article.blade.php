@@ -53,6 +53,15 @@
 
 @push('scripts')
     <script>
-
+        $(".card").hover(
+            function () {
+                $(this).attr("class", "card shadow");
+                $(this).children().last().show('100');
+            },
+            function () {
+                $(this).attr("class", "card");
+                $(this).children().last().hide('100');
+            }
+        );
     </script>
 @endpush
