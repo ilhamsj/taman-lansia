@@ -64,7 +64,7 @@
                         <a class="nav-link" href="{{route('article.index')}}">BLOG <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">KEGIATAN</a>
+                        <a class="nav-link" href="{{route('kegiatan')}}">KEGIATAN</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.index')}}">#AGENDA</a>

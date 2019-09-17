@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        //
+        $item = \App\Category::all();
+        return view('category')->with([
+            'items' => $item
+        ]);
     }
 
     public function create()
@@ -24,7 +26,9 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        //
+        return view('category.show')->with([
+            'item' => \App\Category::where('name', $id)->first()
+        ]);
     }
 
     public function edit($id)

@@ -17,7 +17,10 @@ Route::get('/', function () {
     ]);
 })->name('/');
 
+Route::get('/kegiatan', 'UserController@kegiatan')->name('kegiatan');
+
 Route::resource('blog', 'BlogController');
 Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::resource('article', 'ArticleController');
+Route::resource('kategori', 'CategoryController');
