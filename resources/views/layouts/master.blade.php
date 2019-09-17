@@ -125,6 +125,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
+                    Taman Lansia An-Naba <br/>
                     Mempersiapkan Insan Utama dan Cerdas di Usia Senja
                 </div>
                 <div class="col-md mb-4">
@@ -147,11 +148,11 @@
         </div>
     </footer>
     
-    <footer class="py-4 text-light" style="background-color:#181818ed">
+    <footer class="py-2 text-light" style="background-color:#181818ed">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md">
-                    {{env('app_name')}} {{date('Y')}}
+                <div class="col-md" style="font-size:small">
+                    Copyrights © {{date('Y')}} Taman Lansia An-Naba
                 </div>
                 <div class="col-md text-right">
                     <a href="" class="text-light-sm"><i data-feather="facebook"></i></a>
@@ -192,9 +193,9 @@
         $(window).scroll(function () { 
             var x = $(this).scrollTop();
             if (x > 100) {
-                $("nav").attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
+                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
             } else {
-                $("nav").attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light");                
+                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light");                
             }
 
         });

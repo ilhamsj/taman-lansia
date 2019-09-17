@@ -36,7 +36,8 @@
 @extends('layouts.master')
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
-    <div id="blog">
+
+<section>
         <div class="container">
             <div class="row text-center h-100 justify-content-center align-items-center flex-row">
                 <div class="col">
@@ -47,10 +48,24 @@
                 </div>
             </div>
         </div>
-    </div>
+</section>
 
+<section id="blog">
+    <div class="container">
+        <div class="row h-50 justify-content-center align-items-center flex-row">
+            <div class="col">
+                <h1>Kegiatan Terbaru</h1>
+                <p class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
     <div class="container py-4">
-        <div class="row align-items-center">
+        <div class="row align-items-between">
         @foreach ($items as $item)
             <div class="col-md-4 mb-4">
                 <div class="card text-left">
@@ -65,8 +80,13 @@
                 </div>
             </div>
         @endforeach
+            <div class="col-md-12 text-center">
+                <a href="" class="btn btn-outline-primary">Load More</a>
+            </div>
         </div>
     </div>
+</section>
+
 @endsection
 
 @push('styles')
@@ -88,10 +108,12 @@
     <script>
         $(".card").hover(
             function () {
+                $(this).parent().parent().attr("class", "row align-items-center");
                 $(this).attr("class", "card shadow");
                 $(this).children().last().show('100');
             },
             function () {
+                $(this).parent().parent().attr("class", "row align-items-between");
                 $(this).attr("class", "card");
                 $(this).children().last().hide('100');
             }

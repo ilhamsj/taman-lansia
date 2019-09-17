@@ -14,7 +14,7 @@
                         
                     Kategori :
                     @foreach ($item->blog as $blog)
-                        <a href="">{{$blog->category->name}},</a>
+                        <a href="{{ route('kategori.show', $blog->category->name) }}">{{$blog->category->name}},</a>
                     @endforeach
                 </div>
             </div>

@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome')->with([
-        'items' => \App\Article::orderBy('created_at', 'desc')->get()
+        'items' => \App\Article::paginate(6)
     ]);
 })->name('/');
 
@@ -23,5 +23,3 @@ Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::resource('article', 'ArticleController');
 Route::resource('kategori', 'CategoryController');
-
-// Route::get('kategori/{name}', 'UserController@kegiatan')->name('kegiatan');
