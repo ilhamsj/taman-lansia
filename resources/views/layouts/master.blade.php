@@ -82,6 +82,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('kategori.show', 'agenda')}}">#AGENDA</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('article.create')}}">NEW ARTICLE</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ACCOUNT
@@ -92,6 +95,7 @@
                                 <a class="dropdown-item" href="#">REGISTER</a>
                             @else
                                 <a class="dropdown-item" href="#">PROFILE</a>
+                                <a class="dropdown-item" href="{{route('article.create')}}">NEW POST</a>
                                 <a class="dropdown-item" href="#">DASHBOARD</a>
                             @endguest
                         </div>
