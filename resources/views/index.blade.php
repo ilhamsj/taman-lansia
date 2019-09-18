@@ -4,25 +4,18 @@
     
 @section('content')
 
-<div class="">
-    <div class="container">
-        <div class="row text-center h-50 justify-content-center align-items-center flex-row">
-            <div class="col">
-            <h1>Hi, <span>John Doer</span></h1>
-        </div>
-    </div>
-</div>
-
-@if (session('status'))
-<div class="container">
-    <div class="alert alert-primary" role="alert">
-        {{ session('status') }}
-    </div>
-</div>
-@endif
+<section class="h-5">
+</section>
 
 <div class="container py-4">
-    <div class="row">
+    <div class="row  justify-content-center align-items-center flex-row">
+        <div class="col-md-12">
+            @if (session('status'))
+                <div class="alert alert-primary" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+        </div>
         <div class="col">
             <div class="card">
                 <div class="card-header">
@@ -83,4 +76,8 @@
         </div>
     </div>
 </div>
+
+<section class="h-5">
+
+    </section>
 @endsection

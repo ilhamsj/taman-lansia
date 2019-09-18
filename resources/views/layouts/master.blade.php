@@ -40,6 +40,9 @@
         .h-25 {
             min-height: 25vh;
         }
+        .h-5 {
+            min-height: 15vh;
+        }
 
         .bg-ws {
             background: #F8F9FA;
