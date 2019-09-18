@@ -77,7 +77,6 @@ class ArticleController extends Controller
         $image = \App\Image::find($article->image->id);
         
         $article->update($request->all());
-        $image->update($request->all());
 
         return redirect()->route('admin.index')->with([
             'status' => 'Update Success'
