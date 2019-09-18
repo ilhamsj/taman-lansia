@@ -118,6 +118,10 @@
                 'name' => 'Anto',
                 'telp' => '083869476737',
             ],
+            [
+                'name' => 'email',
+                'telp' => 'tmlansia.annaba@gmail.com',
+            ],
         ];
     @endphp
 
@@ -197,6 +201,12 @@
             } else {
                 $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light");                
             }
+
+        });
+
+        $(".navbar-toggler").click(function (e) { 
+            e.preventDefault();
+            $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
 
         });
     </script>

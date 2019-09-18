@@ -8,7 +8,7 @@
     <div id="blog">
         <div class="container">
             <div class="row text-center h-50 justify-content-center align-items-center flex-row">
-                <div class="col">
+                <div class="col-md-8">
                     <h1>{{$item->title}}</h1>
                     Oleh : <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a> |
                         
@@ -44,9 +44,10 @@
 
 @push('styles')
     <style>
-            #blog {
-            /* background: tomato; */
-            background-image: url('images/photo-1508963493744-76fce69379c0.jpg');
+        #blog {
+            background-image: url('../images/photo-1508963493744-76fce69379c0.jpg');
+            background-size: cover;
+            background-attachment: fixed;
             background-size: cover;
         }
     </style>

@@ -9,6 +9,6 @@ $factory->define(Image::class, function (Faker $faker) {
     return [
         'alt' => $faker->word,
         // 'url' => $faker->imageUrl($width = 640, $height = 480),
-        'url' => 'holder.js/1280x960?auto=yes&textmode=exact&random=yes',
+        'url' => 'holder.js/3456x2304?auto=yes&textmode=exact&random=yes',
     ];
 });
