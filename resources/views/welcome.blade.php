@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row h-100 align-items-center flex-row">
             <div class="col">
-                <img data-aos="fade-up" class="img-fluid rounded-circle" src="holder.js/400x400?auto=yes&textmode=exact&random=yes" alt="" srcset="">
+                <img data-aos="fade-up" class="img-fluid img-thumbnail rounded-circle" src="holder.js/400x400?auto=yes&textmode=exact&random=yes" alt="" srcset="">
             </div>
             <div class="col-md">
                 <h1 data-aos="fade-up" class="">{{$key}}</h1>
@@ -111,17 +111,17 @@
 </section>
 <hr>
 <section id="">
-        <div class="container">
-            <div class="row h-100 justify-content-center align-items-center flex-row">
-                <div class="col">
-                    <h1 data-aos="fade-up">What People Say ?</h1>
-                    <p  data-aos="fade-up" class="lead">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
-                        </p>
-                </div>
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center flex-row">
+            <div class="col">
+                <h1 data-aos="fade-up">What People Say ?</h1>
+                <p  data-aos="fade-up" class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
 
 @push('styles')
@@ -154,6 +154,7 @@
 @endpush
 
 @push('scripts')
+
     <script>
         $("#blog-content .card").hover(
             function () {

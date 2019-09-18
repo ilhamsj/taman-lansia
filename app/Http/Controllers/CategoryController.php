@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryStoreRequest;
 
 class CategoryController extends Controller
 {
@@ -19,9 +20,12 @@ class CategoryController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        \App\Category::create($request->all());
+        return redirect()->route('admin.index')->with([
+            'status' => 'Create Success'
+        ]);
     }
 
     public function show($id)
@@ -36,13 +40,21 @@ class CategoryController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(CategoryStoreRequest $request, $id)
     {
-        //
+        $item = \App\Category::find($id);
+        $item->update($request->all());
+
+        return redirect()->route('admin.index')->with([
+            'status' => $item->name . ' Create Success'
+        ]);
     }
 
     public function destroy($id)
     {
-        //
+        \App\Category::destroy($id);
+        return redirect()->route('admin.index')->with([
+            'status' => $id . ' Delete Success'
+        ]);
     }
 }
