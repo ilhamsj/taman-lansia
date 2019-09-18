@@ -1,9 +1,3 @@
-{{-- {{$item->name}} <br/>
-
-@foreach ($item->blog as $i)
-    {{$i->article->title}}
-@endforeach --}}
-
 @extends('layouts.master')
 
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
@@ -24,19 +18,19 @@
 
 <div class="container py-4">
     <div class="row align-items-center">
-    @foreach ($item->blog as $blog)
-    <div class="col-md-4 mb-4">
-            <div class="card text-left">
-                <img class="card-img-top" data-src="{{$blog->article->image->url}}" alt="{{$blog->article->image->name}}">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{route('article.show', $blog->article->id)}}">{{$blog->article->title}}</a>
-                    </h4>
+        @foreach ($item->blog as $blog)
+            <div class="col-md-4 mb-4">
+                <div class="card text-left">
+                    <img class="card-img-top" data-src="{{$blog->article->image->url}}" alt="{{$blog->article->image->name}}">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{route('article.show', $blog->article->id)}}">{{$blog->article->title}}</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer">{{$blog->article->created_at}}</div>
                 </div>
-                <div class="card-footer">{{$blog->article->created_at}}</div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
     </div>
 </div>
 @endsection
