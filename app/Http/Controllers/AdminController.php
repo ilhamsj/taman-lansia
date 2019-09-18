@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('index')->with([
+        return view('admin')->with([
             'items' => \App\Article::all()
         ]);
     }

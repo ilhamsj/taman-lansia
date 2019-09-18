@@ -9,14 +9,14 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('article')->with([
+        return view('article.index')->with([
             'items' => \App\Article::orderBy('created_at', 'desc')->get()
         ]);
     }
 
     public function create()
     {
-        return view('create')->with([
+        return view('article.create')->with([
             'category' => \App\Category::all()
         ]);
     }
@@ -58,7 +58,7 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        return view('show')->with([
+        return view('article.show')->with([
             'item' => \App\Article::find($id)
         ]);
     }
@@ -66,7 +66,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $item = \App\Article::find($id);
-        return view('edit')->with([
+        return view('article.edit')->with([
             'item' => $item
         ]);
     }
