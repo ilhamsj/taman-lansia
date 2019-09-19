@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <div class="">
+        <div class="collapse">
             <div class="card-body">
                 <form action="{{ route('kategori.store')}}" method="post">
                     @csrf

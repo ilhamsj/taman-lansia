@@ -39,6 +39,5 @@
             e.preventDefault();
             $(this).next().slideToggle('100');
         });
-
     </script>
 @endpush

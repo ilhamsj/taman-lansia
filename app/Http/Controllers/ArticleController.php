@@ -21,8 +21,9 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function store(StoreArticleRequest $request)
+    public function store(Request $request)
     {
+        dd($request->all());
         $image = \App\Image::create($request->all());
 
         $article = \App\Article::create([
