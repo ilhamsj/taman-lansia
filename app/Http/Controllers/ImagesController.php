@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Images;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreImageRequest;
 
 class ImagesController extends Controller
 {
@@ -17,11 +17,19 @@ class ImagesController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(StoreImageRequest $request)
     {
-        $path = $request->file('image')->store('images');
-        // dd($request->image->originalName);
-        return $path;
+        \App\Image::create([
+            'alt' => $request->alt,
+            'url' => $request->file('url')->hashName(),
+        ]);
+
+        $path = $request->file('url')->store('public/images');
+        
+        return redirect()->back()->with([
+            'status' => 'Create Success'
+        ]);
+
     }
 
     public function show($id)
@@ -41,6 +49,12 @@ class ImagesController extends Controller
 
     public function destroy($id)
     {
-        //
+        $item = \App\Image::find($id);
+        unlink(public_path().'/storage/images/'.$item->url);
+        $item->delete();
+
+        return redirect()->back()->with([
+            'status' => 'Delete Success'
+        ]);
     }
 }

@@ -15,11 +15,25 @@
                     <div class="alert"></div>
                     <img class="img-fluid" id="preview" src="" alt="image" title=''>
                 </div>
+                <div class="form-group">
+                    <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : ''}}" placeholder="Title">
+
+                    @error('alt')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>  
                 <div class="form-group"> 
                     <div class="custom-file">
-                        <input type="file" name="image" id="inputGroupFile01" class="imgInp custom-file-input" aria-describedby="inputGroupFileAddon01">
+                        <input type="file" name="url" id="inputGroupFile01" class="imgInp custom-file-input @error('url') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
+                    @error('url')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -42,12 +56,16 @@
                                     <a href="{{ route('user.show', $item->id) }}">{{$item->alt}}</a>
                                 </td>
                                 <td>
-                                    <img class="img-fluid" data-src="{{$item->url}}" alt="{{$item->name}}" srcset="">
+                                    <img class="img-fluid" src="{{url('storage/images/'.$item->url)}}" alt="{{$item->name}}" srcset="">
                                 </td>
                                 <td class="text-center">
-                                    <a class="btn btn-warning btn-sm" href="{{ route('article.edit', $item->id) }}">
-                                        Edit
+                                    <a class="text-danger" href="{{ route('image.destroy', $item->id) }}" onclick="delete_kategori({{$item->id}})"> 
+                                        <i data-feather="x-circle"></i>
                                     </a>
+                                    <form id="{{$item->id}}" action="{{ route('image.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -60,35 +78,46 @@
 
 @push('scripts')
     <script>
-    $("#inputGroupFile01").change(function(event) {  
-        RecurFadeIn();
-        readURL(this);    
-    });
-    $("#inputGroupFile01").on('click',function(event) {
-        RecurFadeIn();
-    });
-    function readURL(input) {    
-        if (input.files && input.files[0]) {   
-            var reader = new FileReader();
-            var filename = $("#inputGroupFile01").val();
-            filename = filename.substring(filename.lastIndexOf('\\')+1);
-            reader.onload = function(e) {
-                debugger;
-                $('#preview').attr('src', e.target.result);
-                $('#preview').hide();
-                $('#preview').fadeIn(500);      
-                $('.custom-file-label').text(filename);             
+        $('#preview').hide();
+        $("#inputGroupFile01").change(function(event) {  
+            RecurFadeIn();
+            readURL(this);
+        });
+        $("#inputGroupFile01").on('click',function(event) {
+            RecurFadeIn();
+        });
+        function readURL(input) {    
+            if (input.files && input.files[0]) {   
+                var reader = new FileReader();
+                var filename = $("#inputGroupFile01").val();
+                filename = filename.substring(filename.lastIndexOf('\\')+1);
+                reader.onload = function(e) {
+                    debugger;
+                    $('#preview').attr('src', e.target.result);
+                    $('#preview').hide();
+                    $('#preview').fadeIn(500);      
+                    $('.custom-file-label').text(filename);
+                }
+                reader.readAsDataURL(input.files[0]);    
+            } 
+            $(".alert").removeClass("loading").hide();
+        }
+        function RecurFadeIn(){ 
+            FadeInAlert("Wait for it...");  
+        }
+        function FadeInAlert(text){
+            $(".alert").show();
+            $(".alert").text(text).addClass("loading");  
+        }
+    </script>
+
+    <script>
+        function delete_kategori(id)
+        {
+            event.preventDefault(); 
+            if (confirm() == true) {
+                document.getElementById(id).submit();
             }
-            reader.readAsDataURL(input.files[0]);    
-        } 
-        $(".alert").removeClass("loading").hide();
-    }
-    function RecurFadeIn(){ 
-        FadeInAlert("Wait for it...");  
-    }
-    function FadeInAlert(text){
-        $(".alert").show();
-        $(".alert").text(text).addClass("loading");  
-    }
+        }
     </script>
 @endpush
