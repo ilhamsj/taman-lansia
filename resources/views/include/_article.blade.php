@@ -1,7 +1,7 @@
 <div class="card">
         <div class="card-header">
             <a class="btn btn-primary btn-sm" href="{{ route('article.create') }}">
-                Jumlah Artikel
+                Artikel
                 <span class="badge badge-light">
                         {{count($items)}}
                 </span>

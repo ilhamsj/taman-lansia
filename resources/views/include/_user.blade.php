@@ -1,7 +1,7 @@
 <div class="card">
         <div class="card-header">
             <a class="btn btn-primary btn-sm" href="{{ route('image.create') }}">
-                Total Pengguna
+                Pengguna
                 <span class="badge badge-light">
                         {{count($users)}}
                 </span>

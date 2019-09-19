@@ -50,8 +50,12 @@ class ImagesController extends Controller
     public function destroy($id)
     {
         $item = \App\Image::find($id);
-        unlink(public_path().'/storage/images/'.$item->url);
         $item->delete();
+
+        $image = public_path().'/storage/images/'.$item->url;
+        if(\File::exists($image)){
+            \File::delete($image);
+        }
 
         return redirect()->back()->with([
             'status' => 'Delete Success'

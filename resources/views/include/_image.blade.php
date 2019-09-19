@@ -7,7 +7,7 @@
             </span>
         </a>
     </div>
-    <div class="">
+    <div class="collapse">
         <div class="card-body">
             <form  method="POST" action="{{route('image.store')}}" enctype="multipart/form-data">
                 @csrf
@@ -28,12 +28,11 @@
                     <div class="custom-file">
                         <input type="file" name="url" id="inputGroupFile01" class="imgInp custom-file-input @error('url') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                        {{-- @error('url') --}}
+                        @error('url')
                             <span class="invalid-feedback" role="alert">
-                                {{-- <strong>{{ $message }}</strong> --}}
-                                eror
+                                <strong>{{ $message }}</strong>
                             </span>
-                        {{-- @enderror --}}
+                        @enderror
                     </div>
                 </div>
                 

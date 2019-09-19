@@ -81639,7 +81639,7 @@ AOS.init();
 
 var feather = __webpack_require__(/*! feather-icons */ "./node_modules/feather-icons/dist/feather.js");
 
-feather.replace();
+feather.replace(); // require('sweetalert2');
 
 /***/ }),
 

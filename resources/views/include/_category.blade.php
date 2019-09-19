@@ -1,7 +1,7 @@
 <div class="card">
         <div class="card-header">
             <a class="btn btn-primary btn-sm" href="{{ route('kategori.create') }}">
-                Jumlah Kategori
+                Kategori
                 <span class="badge badge-light">
                         {{count($categories)}}
                 </span>

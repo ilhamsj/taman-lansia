@@ -25,7 +25,7 @@ class StoreImageRequest extends FormRequest
     {
         return [
             'alt' => 'required',
-            'url' => 'required',
+            'url' => 'required|max:3000',
         ];
     }
 }

@@ -13,4 +13,4 @@ AOS.init();
 const feather = require('feather-icons')
 feather.replace()
 
-require('sweetalert2');
+// require('sweetalert2');
