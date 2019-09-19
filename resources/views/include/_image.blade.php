@@ -28,12 +28,13 @@
                     <div class="custom-file">
                         <input type="file" name="url" id="inputGroupFile01" class="imgInp custom-file-input @error('url') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        {{-- @error('url') --}}
+                            <span class="invalid-feedback" role="alert">
+                                {{-- <strong>{{ $message }}</strong> --}}
+                                eror
+                            </span>
+                        {{-- @enderror --}}
                     </div>
-                    @error('url')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Save</button>
