@@ -19,7 +19,7 @@ class ImagesController extends Controller
 
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     public function show($id)

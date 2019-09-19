@@ -23,4 +23,4 @@ Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::resource('article', 'ArticleController');
 Route::resource('kategori', 'CategoryController');
-Route::resource('image', 'ImageController');
+Route::resource('image', 'ImagesController');
