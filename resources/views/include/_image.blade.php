@@ -9,17 +9,20 @@
     </div>
     <div class="">
         <div class="card-body">
-            <form id="form1" runat="server">
-                <div class="alert"></div>
-                <div id='img_contain'>
-                    <img class="img-fluid" id="blah" src="" alt="your image" title=''/>
-                </div> 
-                <div class="input-group"> 
-                <div class="custom-file">
-                <input type="file" id="inputGroupFile01" class="imgInp custom-file-input" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-              </div>
-            </div>
+            <form  method="POST" action="{{route('image.store')}}" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <div class="alert"></div>
+                    <img class="img-fluid" id="preview" src="" alt="image" title=''>
+                </div>
+                <div class="form-group"> 
+                    <div class="custom-file">
+                        <input type="file" name="image" id="inputGroupFile01" class="imgInp custom-file-input" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
         <div class="card-body">
@@ -57,36 +60,35 @@
 
 @push('scripts')
     <script>
-$("#inputGroupFile01").change(function(event) {  
-  RecurFadeIn();
-  readURL(this);    
-});
-$("#inputGroupFile01").on('click',function(event){
-  RecurFadeIn();
-});
-function readURL(input) {    
-  if (input.files && input.files[0]) {   
-    var reader = new FileReader();
-    var filename = $("#inputGroupFile01").val();
-    filename = filename.substring(filename.lastIndexOf('\\')+1);
-    reader.onload = function(e) {
-      debugger;      
-      $('#blah').attr('src', e.target.result);
-      $('#blah').hide();
-      $('#blah').fadeIn(500);      
-      $('.custom-file-label').text(filename);             
+    $("#inputGroupFile01").change(function(event) {  
+        RecurFadeIn();
+        readURL(this);    
+    });
+    $("#inputGroupFile01").on('click',function(event) {
+        RecurFadeIn();
+    });
+    function readURL(input) {    
+        if (input.files && input.files[0]) {   
+            var reader = new FileReader();
+            var filename = $("#inputGroupFile01").val();
+            filename = filename.substring(filename.lastIndexOf('\\')+1);
+            reader.onload = function(e) {
+                debugger;
+                $('#preview').attr('src', e.target.result);
+                $('#preview').hide();
+                $('#preview').fadeIn(500);      
+                $('.custom-file-label').text(filename);             
+            }
+            reader.readAsDataURL(input.files[0]);    
+        } 
+        $(".alert").removeClass("loading").hide();
     }
-    reader.readAsDataURL(input.files[0]);    
-  } 
-  $(".alert").removeClass("loading").hide();
-}
-function RecurFadeIn(){ 
-  console.log('ran');
-  FadeInAlert("Wait for it...");  
-}
-function FadeInAlert(text){
-  $(".alert").show();
-  $(".alert").text(text).addClass("loading");  
-}
+    function RecurFadeIn(){ 
+        FadeInAlert("Wait for it...");  
+    }
+    function FadeInAlert(text){
+        $(".alert").show();
+        $(".alert").text(text).addClass("loading");  
+    }
     </script>
 @endpush
