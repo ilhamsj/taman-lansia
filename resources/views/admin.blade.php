@@ -14,16 +14,16 @@
                 </div>
             @endif
         </div>
-        <div class="col-md-12 mb-4">
+        <div class="col-md-6 mb-4">
             @include('include._article')
         </div>
-        <div class="col-md mb-4">
+        <div class="col-md-6 mb-4">
             @include('include._category')
         </div>
-        <div class="col-md mb-4">
+        <div class="col-md-6 mb-4">
             @include('include._image')
         </div>
-        <div class="col-md mb-4">
+        <div class="col-md-6 mb-4">
             @include('include._user')
         </div>
     </div>

@@ -37,20 +37,6 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
 
-{{-- <section id="welcome">
-    <div class="container">
-        <div class="row h-100 align-items-center flex-row">
-            <div class="col-md-7">
-                <h1 class="">Taman Lansia <br/>An-Naba</h1>
-                <p class="lead">
-                    {{Str::title($about['Perkenalan'][0])}}
-                </p>
-                <a href="#blog" class="">Next</a>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
 @foreach ($about as $key => $value)
 <section id="{{Str::slug($key)}}" class="about">
     <div class="container">
