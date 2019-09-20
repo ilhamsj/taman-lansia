@@ -1,11 +1,14 @@
 <div class="card">
     <div class="card-header">
         <a class="btn btn-primary btn-sm" href="{{ route('image.create') }}">
-            Album
+            Album fm
             <span class="badge badge-light">
                     {{count($images)}}
             </span>
         </a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
     </div>
     <div class="collapse">
         <div class="card-body">

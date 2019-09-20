@@ -65,16 +65,22 @@
                                 </span>
                             @enderror
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="url">Image URL</label>
-                            <input type="text" name="url" id="url" class="form-control @error('url') is-invalid  @enderror" value="{{ old('url') ? old('url') : 'holder.js/1280x960?auto=yes&textmode=exact&random=yes'}}">
+                            <div class="alert"></div>
+                            <img class="img-fluid" id="preview" src="" alt="image" title=''>
+                        </div>
 
-                            @error('url')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="form-group"> 
+                            <div class="custom-file">
+                                <input type="file" name="url" id="inputGroupFile01" class="imgInp custom-file-input @error('url') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                @error('url')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -116,4 +122,38 @@
             $("h1").html($('#title').val());
         });
     </script>
+
+<script>
+    $('#preview').hide();
+    $("#inputGroupFile01").change(function(event) {  
+        RecurFadeIn();
+        readURL(this);
+    });
+    $("#inputGroupFile01").on('click',function(event) {
+        RecurFadeIn();
+    });
+    function readURL(input) {    
+        if (input.files && input.files[0]) {   
+            var reader = new FileReader();
+            var filename = $("#inputGroupFile01").val();
+            filename = filename.substring(filename.lastIndexOf('\\')+1);
+            reader.onload = function(e) {
+                debugger;
+                $('#preview').attr('src', e.target.result);
+                $('#preview').hide();
+                $('#preview').fadeIn(500);      
+                $('.custom-file-label').text(filename);
+            }
+            reader.readAsDataURL(input.files[0]);    
+        } 
+        $(".alert").removeClass("loading").hide();
+    }
+    function RecurFadeIn(){ 
+        FadeInAlert("Wait for it...");  
+    }
+    function FadeInAlert(text){
+        $(".alert").show();
+        $(".alert").text(text).addClass("loading");  
+    }
+</script>
 @endpush
