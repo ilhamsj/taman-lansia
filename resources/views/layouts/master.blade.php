@@ -61,6 +61,10 @@
             color: #959595;
         }
 
+        img {
+            max-width: 100%;
+        }
+
     </style>
     @stack('styles') 
 </head>
