@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
-    <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -31,6 +31,10 @@
 
         .h-100 {
             min-height: 100vh;
+        }
+
+        .h-80 {
+            min-height: 80vh;
         }
 
         .h-50 {
@@ -69,7 +73,7 @@
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default fixed-top navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-default shadow-sm navbar-expand-sm">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">AN-NABA</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +113,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="py-4">
         @yield('content')
     </main>
     
@@ -180,7 +184,7 @@
     </footer>
     
 
-    <script src="{{secure_asset('js/app.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');
@@ -205,15 +209,6 @@
             height: 500
         });
 
-        $(window).scroll(function () { 
-            var x = $(this).scrollTop();
-            if (x > 100) {
-                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
-            } else {
-                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light");                
-            }
-
-        });
 
         $(".navbar-toggler").click(function (e) { 
             e.preventDefault();

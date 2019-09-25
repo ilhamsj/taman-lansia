@@ -37,27 +37,33 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
 
-@foreach ($about as $key => $value)
-<section id="{{Str::slug($key)}}" class="about">
+<section id="">
     <div class="container">
-        <div class="row h-100 align-items-center flex-row">
-            <div class="col">
-                <img data-aos="fade-up" class="img-fluid img-thumbnail rounded-circle" src="holder.js/400x400?auto=yes&textmode=exact&random=yes" alt="" srcset="">
-            </div>
-            <div class="col-md">
-                <h1 data-aos="fade-up" class="">{{$key}}</h1>
-                    @foreach ($value as $item)
-                        <p data-aos="fade-up" class="lead">
-                            <i data-feather="check"></i> {{Str::title($item)}}
-                        </p>
-                    @endforeach
-                    {{count($value)}}
-                <a href="" class="next">Next</a>
+        <div class="row h-80 justify-content-center text-center align-items-center flex-row">
+            <div class="col-12 col-sm-10">
+                <h1 data-aos="fade-up">What People Say ?</h1>
+                <p  data-aos="fade-up" class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
+                </p>
             </div>
         </div>
     </div>
 </section>
-@endforeach
+
+<div class="container">
+    @foreach ($about as $key => $value)
+        <div class="row align-items-center h-50">
+            <div class="col-12 col-md-7">
+                <h2>{{$key}}</h2>
+                <p class="lead">
+                    @foreach ($value as $item)
+                    {{Str::title($item)}}
+                    @endforeach
+                </p>
+            </div>
+        </div>
+    @endforeach
+</div>
 
 <section id="blog">
     <div class="container">
@@ -77,13 +83,13 @@
         <div class="row align-items-between">
         @foreach ($items as $item)
             <div class="col-md-4 mb-4"  data-aos="fade-up">
-                <div class="card text-left">
-                <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
-                    </h4>
-                    <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
+                <div class="card">
+                    <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                        </h4>
+                        <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
                     </div>
                     <div class="card-footer">{{$item->user->name}}</div>
                 </div>
@@ -155,10 +161,7 @@
             }
         );
 
-        $(".about .container .row:odd").attr("class", "row h-100 align-items-center flex-row-reverse text-right");
-        
-        // $(".about").hide();
-        // $(".about:first-child").show();
+        // $(".about .container .row:odd").attr("class", "row h-100 align-items-center flex-row-reverse");
 
         $(".next").click(function (e) { 
             e.preventDefault();

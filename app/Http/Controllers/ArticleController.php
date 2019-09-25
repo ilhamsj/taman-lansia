@@ -25,8 +25,6 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-        $path = $request->file('url')->store('public/images');
-
         $message = $request->description;
         $dom = new \DomDocument();
         $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -61,29 +59,15 @@ class ArticleController extends Controller
 			} // <!--endif
         } // <!--endforeach
         
-        $gambar = \App\Image::create([
-            'alt' => $request->alt,
-            'url' => $request->file('url')->hashName(),
-        ]);
 
-        foreach ($request->name as $name) {
-            $category = \App\Category::create([
-                'name' => $name,
-            ]);
-
-            \App\Blog::create([
-                'article_id' => $article->id,
-                'category_id' => $category->id,
-                'image_id' => $gambar->id,
-            ]);
-        }
-
-        $article = \App\Article::create([
+        \App\Article::create([
             'user_id' => $request->user_id,
-            'image_id' => $gambar->id,
             'title' => $request->title,
-            'description' => $dom->saveHTML()
+            'description' => $dom->saveHTML(),
         ]);
+
+        //  $path = $request->file('url')->store('public/images');
+        // 'image' => $request->file('url')->hashName(),
 
         return redirect()->route('admin.index')->with([
             'status' => 'Create Success'
