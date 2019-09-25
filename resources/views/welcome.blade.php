@@ -44,7 +44,7 @@
 
 <div id="about-us">
 @foreach ($about as $key => $value)    
-<div class="container">
+<div class="container mb-4">
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-md-10">
             <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
@@ -87,14 +87,16 @@
     <div class="container py-4">
         <div class="row align-items-between">
         @foreach ($items as $item)
-            <div class="col-md-4 mb-4"  data-aos="fade-up">
-                <div class="card text-left">
-                <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
-                    </h4>
-                    <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="card">
+                    <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                        </h4>
+                        <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
+                        <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
+                            </small></p>
                     </div>
                     <div class="card-footer">{{$item->user->name}}</div>
                 </div>
