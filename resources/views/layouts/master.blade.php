@@ -7,6 +7,7 @@
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -65,42 +66,44 @@
             max-width: 100%;
         }
 
+        #mainNav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
     </style>
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default fixed-top navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-default navbar-expand-lg navbar-dark welcome shadow-sm" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="{{route('/')}}">AN-NABA</a>
+            <a class="navbar-brand" href="{{route('/')}}">An-Naba</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('article.index')}}">BLOG <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('article.index')}}">Blog <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('kategori.show', 'kegiatan')}}">KEGIATAN</a>
+                        <a class="nav-link" href="{{route('kategori.show', 'kegiatan')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('kategori.show', 'agenda')}}">#AGENDA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('article.create')}}">NEW ARTICLE</a>
+                        <a class="nav-link" href="{{route('kategori.show', 'agenda')}}">Agenda</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ACCOUNT
+                            Profile
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @guest
-                                <a class="dropdown-item" href="#">LOGIN</a>
-                                <a class="dropdown-item" href="#">REGISTER</a>
+                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="#">Register</a>
                             @else
-                                <a class="dropdown-item" href="#">PROFILE</a>
-                                <a class="dropdown-item" href="{{route('article.create')}}">NEW POST</a>
-                                <a class="dropdown-item" href="#">DASHBOARD</a>
+                                <a class="dropdown-item" href="#">Profile</a>
                             @endguest
                         </div>
                     </li>
@@ -203,22 +206,6 @@
             placeholder: 'Hello bootstrap 4',
             tabsize: 2,
             height: 500
-        });
-
-        $(window).scroll(function () { 
-            var x = $(this).scrollTop();
-            if (x > 100) {
-                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
-            } else {
-                $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light");                
-            }
-
-        });
-
-        $(".navbar-toggler").click(function (e) { 
-            e.preventDefault();
-            $("nav").first().attr("class", "navbar navbar-default fixed-top navbar-expand-sm navbar-light bg-ws");
-
         });
     </script>
     @stack('scripts')
