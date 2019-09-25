@@ -66,6 +66,10 @@
             max-width: 100%;
         }
 
+        .welcome {
+            background-image: linear-gradient(225deg,#0abac2,#b2de94)
+        }
+
         #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;

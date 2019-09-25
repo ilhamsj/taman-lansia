@@ -42,6 +42,17 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
 
+<div class="container">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-12 col-sm-8">
+            <h1 class="dispay-2">Taman Lansia An-naba</h1>
+            <p class="lead">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, quisquam tenetur tempore aliquid itaque quas natus excepturi eaque labore molestias mollitia atque quos, ducimus impedit ad vitae sunt perferendis! Pariatur?
+            </p>
+        </div>
+    </div>
+</div>
+
 <div id="about-us">
 @foreach ($about as $key => $value)    
 <div class="container mb-4">
@@ -141,14 +152,6 @@
             font-weight: bold;
             font-family: auto;
             font-size: 3rem
-        }
-
-        .welcome {
-            background-image: linear-gradient(225deg,#0abac2,#b2de94)
-        }
-
-        body {
-            background-color: #F5F7FB;
         }
 
         .img-fluid-50 {
