@@ -7,9 +7,14 @@
             '0' => 'mempersiapkan insan “utama dan cerdas di usia senja”',
         ],
         'Perkenalan' => [
-            '0' => 'kami adalah tempat pembelajaran, pendidikan, pelatihan, pendampingan bagi santri-santri USIA SENJA, untuk memperdalam agama, mempersiapkan diri menghadapi akhir hayat insya Alloh menuju husnul khotimah',
-            '1' => 'Taman Lansia An-Naba’  bukan panti jompo, bukan panti wreda. TL An-Naba’ merupakan wadah komunitas yang mengakomodasi santri usia senja. Santri usia muda mempersiapkan hidup; santri usia senja mempersiapkan mati. Santri usia senja bukan hanya yang dhuafa, karena bisa saja ia sukses duniawi, namun merasa miskin ukhrowi.',
-            '3' => 'Lelaki Anshar Bertanya Kepada Rosulullah Saw : Ya Rosulullah, Mukmin Manakah Yang Paling Utama ? Beliau Menjawab: Yang Paling Baik Akhlaknya Di Antara Mereka. Mukmin Manakah Yang Paling Cerdas ?, Tanya Lelaki Itu Lagi; Beliau Menjawab : Orang Yang Paling Banyak Mengingat Mati Dan Paling Baik Persiapanya Untuk Kehidupan Setelah Mati. Mereka Itulah Oran-Orang Yang Cerdas” (Hr. Ibnu Majah No. 4259, Dihasankan Asy-Syaih Al-Albani Ra Dalam Ash-Shahihah No. 1384)',
+            '0' => 'Kami Adalah Tempat Pembelajaran, Pendidikan, Pelatihan, Pendampingan Bagi Santri-Santri Usia Senja, Untuk Memperdalam Agama, Mempersiapkan Diri Menghadapi Akhir Hayat Insya Alloh Menuju Husnul Khotimah',
+            '1' => 'Taman Lansia An-Naba’ Bukan Panti Jompo, Bukan Panti Wreda. Tl An-Naba’ Merupakan Wadah Komunitas Yang Mengakomodasi Santri Usia Senja. Santri Usia Muda Mempersiapkan Hidup; Santri Usia Senja Mempersiapkan Mati. Santri Usia Senja Bukan Hanya Yang Dhuafa, Karena Bisa Saja Ia Sukses Duniawi, Namun Merasa Miskin Ukhrowi.',
+            '3' => '
+            Lelaki Anshar Bertanya Kepada Rosulullah Saw : 
+                <blockquote class="blockquote">
+                Ya Rosulullah, Mukmin Manakah Yang Paling Utama ? Beliau Menjawab: Yang Paling Baik Akhlaknya Di Antara Mereka. Mukmin Manakah Yang Paling Cerdas ?, Tanya Lelaki Itu Lagi; Beliau Menjawab : Orang Yang Paling Banyak Mengingat Mati Dan Paling Baik Persiapanya Untuk Kehidupan Setelah Mati. Mereka Itulah Oran-Orang Yang Cerdas”
+                <footer class="blockquote-footer">Hr. Ibnu Majah No. 4259, Dihasankan 
+                        <cite title="Source Title">Asy-Syaih Al-Albani Ra Dalam Ash-Shahihah No. 1384</cite></footer></blockquote>',
         ],
         'Sasaran' => [
             '0' => 'Muslim laki-laki maupun perempuan',
@@ -37,27 +42,33 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
 
-@foreach ($about as $key => $value)
-<section id="{{Str::slug($key)}}" class="about">
-    <div class="container">
-        <div class="row h-100 align-items-center flex-row">
-            <div class="col">
-                <img data-aos="fade-up" class="img-fluid img-thumbnail rounded-circle" src="holder.js/400x400?auto=yes&textmode=exact&random=yes" alt="" srcset="">
-            </div>
-            <div class="col-md">
-                <h1 data-aos="fade-up" class="">{{$key}}</h1>
-                    @foreach ($value as $item)
-                        <p data-aos="fade-up" class="lead">
-                            <i data-feather="check"></i> {{Str::title($item)}}
-                        </p>
-                    @endforeach
-                    {{count($value)}}
-                <a href="" class="next">Next</a>
+<div id="about-us">
+@foreach ($about as $key => $value)    
+<div class="container">
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-md-10">
+            <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
+                <div class="row align-items-center no-gutters flex-row">
+                    <div class="col-md-5 p-4 text-center welcome">
+                        <img src="https://paperpillar.com/assets/images/crisp-works.png" class="img-fluid">
+                    </div>
+                    <div class="col-md">
+                        <div class="card-body">
+                            <h1>{{$key}}</h1>
+                            @foreach ($value as $v)
+                                <p class="card-text text-muted lead">
+                                    {!! $v !!}
+                                </p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 @endforeach
+</div>
 
 <section id="blog">
     <div class="container">
@@ -130,12 +141,18 @@
             font-size: 3rem
         }
 
-        /* #welcome {
-            background-color: #ff7700;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-            background-attachment: fixed;
-            background-size: cover;
-        } */
+        .welcome {
+            background-image: linear-gradient(225deg,#0abac2,#b2de94)
+        }
+
+        body {
+            background-color: #F5F7FB;
+        }
+
+        .img-fluid-50 {
+            max-width: 50%;
+        }
+        
     </style>
 @endpush
 
@@ -156,13 +173,14 @@
         );
 
         $(".about .container .row:odd").attr("class", "row h-100 align-items-center flex-row-reverse text-right");
-        
-        // $(".about").hide();
-        // $(".about:first-child").show();
 
         $(".next").click(function (e) { 
             e.preventDefault();
             $(this).parent().hide();
         });
+
+        $('#perkenalan .row div').first().hide();
+        
+        $('.no-gutters:odd').addClass('flex-row-reverse');
     </script>
 @endpush
