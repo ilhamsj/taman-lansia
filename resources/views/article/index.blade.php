@@ -22,18 +22,9 @@
 <div class="container py-4">
     <div class="row justify-content-center flex-row-reverse">
         <div class="col-md-4 mb-4">
-<div class="card">
-    <div class="card-header">
-        <p class="card-text">Text</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        @foreach ($items as $item)
-            <li class="list-group-item">{{$item->title}}</li>
-        @endforeach
-    </ul>
-</div>
-
+            @include('include._sidebar')
         </div>
+
         <div class="col">
             <div class="row">
                 <div class="col-12 mb-4">
