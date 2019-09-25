@@ -16,14 +16,14 @@
 </div>
 
 <div id="about-us">
-@foreach ($about as $key => $value)    
+@foreach ($about as $key => $value)
 <div  data-aos="zoom-in" class="container mb-4">
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-md-10">
             <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
                 <div class="row align-items-center no-gutters flex-row">
                     <div class="col-md-5 p-4 text-center welcome">
-                        <img src="https://paperpillar.com/assets/images/crisp-works.png" class="img-fluid">
+                        <img src="{{ secure_asset('images/lifecycle-works.png') }}" class="img-fluid">
                     </div>
                     <div class="col-md">
                         <div class="card-body">

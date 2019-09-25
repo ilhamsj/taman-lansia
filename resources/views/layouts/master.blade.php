@@ -7,7 +7,6 @@
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{ secure_asset('css/montserrat.css') }}">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -69,14 +68,6 @@
         .welcome {
             background-image: linear-gradient(225deg,#0abac2,#b2de94)
         }
-
-        #mainNav a {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            color: #0abac2
-        }
-
     </style>
     @stack('styles') 
 </head>

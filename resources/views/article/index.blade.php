@@ -7,8 +7,8 @@
     <div class="container">
         <div class="row text-center h-100 justify-content-center align-items-center flex-row">
             <div class="col">
-                <h1 class="animated infinite bounce delay-2s">Blog</h1>
-                <p class="lead">
+                <h1 data-aos="slide-left">Blog</h1>
+                <p class="lead" data-aos="slide-right">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
                 </p>
                 <a href="" class="btn btn-primary">
