@@ -196,12 +196,6 @@
             });
         });
 
-        $('#description').summernote({
-            placeholder: 'Hello bootstrap 4',
-            tabsize: 2,
-            height: 500
-        });
-
         $(window).scroll(function () { 
             if ($(document).scrollTop() > 100) {
                 $('nav').addClass('bg-light shadow-sm').removeClass('bg-transparent');

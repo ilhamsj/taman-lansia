@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreArticleRequest;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        // dd(\App\Article::all());
         return view('article.index')->with([
             'items' => \App\Article::orderBy('created_at', 'desc')->get()
         ]);
@@ -18,74 +18,23 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('article.create')->with([
-            'category' => \App\Category::all()
-        ]);
+        return view('article.create');
     }
 
     public function store(Request $request)
     {
-        $path = $request->file('url')->store('public/images');
-
-        $message = $request->description;
-        $dom = new \DomDocument();
-        $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        
-		$images = $dom->getElementsByTagName('img');
-
-		// foreach <img> in the submited message
-		foreach($images as $img){
-			$src = $img->getAttribute('src');
-			
-			// if the img source is 'data-url'
-			if(preg_match('/data:image/', $src)){
-				
-				// get the mimetype
-				preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
-				$mimetype = $groups['mime'];
-				
-				// Generating a random filename
-				$filename = uniqid();
-				$filepath = "/images/$filename.$mimetype";
-	
-				// @see http://image.intervention.io/api/
-				$image = Image::make($src)
-				  // resize if required
-				  /* ->resize(300, 200) */
-				  ->encode($mimetype, 100) 	// encode file to the specified mimetype
-				  ->save(public_path($filepath));
-				
-				$new_src = asset($filepath);
-				$img->removeAttribute('src');
-				$img->setAttribute('src', $new_src);
-			} // <!--endif
-        } // <!--endforeach
-        
-        $gambar = \App\Image::create([
-            'alt' => $request->alt,
-            'url' => $request->file('url')->hashName(),
-        ]);
-
-        foreach ($request->name as $name) {
-            $category = \App\Category::create([
-                'name' => $name,
-            ]);
-
-            \App\Blog::create([
-                'article_id' => $article->id,
-                'category_id' => $category->id,
-                'image_id' => $gambar->id,
-            ]);
-        }
-
         $article = \App\Article::create([
             'user_id' => $request->user_id,
-            'image_id' => $gambar->id,
+            'image' => $request->file('image')->hashName(),
+            'slug' => Str::slug($request->title),
             'title' => $request->title,
-            'description' => $dom->saveHTML()
+            'description' => $request->description,
+            'category' => $request->category,
         ]);
+        
+        $request->file('image')->store('public/images');
 
-        return redirect()->route('admin.index')->with([
+        return redirect()->back()->with([
             'status' => 'Create Success'
         ]);
     }

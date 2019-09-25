@@ -11,7 +11,7 @@
                 <p class="lead" data-aos="slide-right">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
                 </p>
-                <a href="" class="btn btn-primary">
+                <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
                     <i data-feather="plus-square"></i>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                                     <a href="{{route('article.show', $item->slug)}}">{{$item->title}}</a>
                                 </h4>
                                 <p class="">
-                                    {{$item->description}}
+                                    {{ Str::limit($item->description, 150)}}
                                 </p>
                             </div>
                             <div class="card-footer">
@@ -55,6 +55,7 @@
     </div>
 </div>
 
+@include('include._create')
 @endsection
 
 @push('styles')

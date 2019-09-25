@@ -1,26 +1,14 @@
-@extends('layouts.master')
-
-@section('title', 'Tambah Artikel')
-    
-@section('content')
-
-<div class="">
-    <div class="container">
-        <div class="row text-center h-50 justify-content-center align-items-center flex-row">
-            <div class="col">
-            <h1>Hi, <span>John Doer</span></h1>
-        </div>
-    </div>
-</div>
-
-<div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-sm">
-                <div class="card-header">
-                    <a class="btn btn-primary btn-sm" href="{{ route('admin.index') }}">Back</a>
-                </div>
-                <div class="card-body">
+<!-- Modal -->
+<div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
                     <form action="{{ route('article.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -56,10 +44,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="alt">Image Name</label>
-                            <input type="text" name="alt" id="alt" class="form-control @error('alt') is-invalid  @enderror" value="{{ old('alt') ? old('alt') : \Faker\Factory::create()->word()}}">
+                            <label for="category">Kategori</label>
+                            <input type="text" name="category" id="category" class="form-control @error('category') is-invalid  @enderror" value="{{ old('category') ? old('category') : \Faker\Factory::create()->word()}}">
 
-                            @error('alt')
+                            @error('category')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -73,9 +61,9 @@
 
                         <div class="form-group"> 
                             <div class="custom-file">
-                                <input type="file" name="url" id="inputGroupFile01" class="imgInp custom-file-input @error('url') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
+                                <input type="file" name="image" id="inputGroupFile01" class="imgInp custom-file-input @error('image') is-invalid  @enderror" aria-describedby="inputGroupFileAddon01">
                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                @error('url')
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -85,27 +73,17 @@
 
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
-                </div>
-                <div class="card-footer">
-                    Helo
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
 </div>
 
-@endsection
-
 @push('scripts')
     <script>
-        $("form .form-group").first().hide();
-
-        $('#title').keyup(function (e) { 
-            $("h1").html($('#title').val());
-        });
-    </script>
-
-<script>
     $('#preview').hide();
     $("#inputGroupFile01").change(function(event) {  
         RecurFadeIn();
@@ -137,11 +115,5 @@
         $(".alert").show();
         $(".alert").text(text).addClass("loading");  
     }
-
-    $('#description').summernote({
-            placeholder: 'Hello bootstrap 4',
-            tabsize: 2,
-            height: 500
-        });
-</script>
+    </script>
 @endpush
