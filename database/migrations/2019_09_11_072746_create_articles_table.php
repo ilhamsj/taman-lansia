@@ -21,8 +21,10 @@ class CreateArticlesTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string('image');
             $table->string('title');
             $table->text('description');
+            $table->string('category');
             $table->timestamps();
         });
     }

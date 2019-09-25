@@ -20,13 +20,29 @@
 </div>
 
 <div class="container py-4">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center flex-row-reverse">
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Kategori
+                </div>
+                <div class="card-body">
+                    <a href="#" class="card-link">Link 1</a>
+                    <a href="#" class="card-link">Link 2</a>
+                </div>
+            </div>
+        </div>
         <div class="col">
             <div class="row">
+                <div class="col-12 mb-4">
+                    <hr>
+                        <h4>Update Terbaru</h4>
+                    <hr>
+                </div>
                 @foreach ($items as $item)
                     <div class="col-6 mb-4" data-aos="fade-up">
-                        <div class="card">
-                            <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
+                        <div class="card shadow">
+                            <img class="card-img-top" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
@@ -38,20 +54,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <h6 class="card-subtitle text-muted">Subtitle</h6>
-              </div>
-              <img src="holder.js/600x400?auto=yes&random=yes" alt="">
-              <div class="card-body">
-                <p class="card-text">Text</p>
-                <a href="#" class="card-link">Link 1</a>
-                <a href="#" class="card-link">Link 2</a>
-              </div>
             </div>
         </div>
     </div>

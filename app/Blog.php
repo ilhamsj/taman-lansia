@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     protected $fillable = [
-        'article_id', 'category_id', 'image_id'
+        'article_id', 'category_id',
     ];
     
     public function article()
@@ -18,10 +18,5 @@ class Blog extends Model
     public function category()
     {
         return $this->belongsTo('App\Category');
-    }
-
-    public function image()
-    {
-        return $this->belongsTo('App\Image');
     }
 }
