@@ -173,10 +173,10 @@
     <footer class="py-4 text-light" style="background-color:#181818ed">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md">
+                <div class="col">
                     <small class="text-muted">Copyrights © {{date('Y')}} Taman Lansia An-Naba</small>
                 </div>
-                <div class="col-md text-right">
+                <div class="col text-right">
                     <a href="" class="text-light-sm"><i data-feather="facebook"></i></a>
                     <a href="" class="text-light-sm"><i data-feather="twitter"></i></a>
                     <a href="" class="text-light-sm"><i data-feather="instagram"></i></a>
