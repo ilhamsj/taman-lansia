@@ -62,10 +62,10 @@
             @foreach ($items as $item)
                 <div class="col-12 col-md-4 mb-4" data-aos="fade-up">
                     <div class="card">
-                        <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
+                        <img class="card-img-top" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                                <a href="{{route('article.show', $item->slug)}}">{{$item->title}}</a>
                             </h4>
                             <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
                                 </small></p>

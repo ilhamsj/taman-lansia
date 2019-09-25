@@ -45,7 +45,7 @@
                             <img class="card-img-top" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                                    <a href="{{route('article.show', $item->slug)}}">{{$item->title}}</a>
                                 </h4>
                                 <p class="">
                                     {{$item->description}}

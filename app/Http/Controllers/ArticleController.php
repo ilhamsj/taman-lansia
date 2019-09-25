@@ -93,7 +93,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         return view('article.show')->with([
-            'item' => \App\Article::find($id)
+            'item' => \App\Article::where('slug', $id)->first()
         ]);
     }
 
