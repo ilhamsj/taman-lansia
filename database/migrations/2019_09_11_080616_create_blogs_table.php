@@ -27,12 +27,6 @@ class CreateBlogsTable extends Migration
                 ->on('categories')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->bigInteger('image_id')->unsigned()->index();
-            $table->foreign('image_id')
-                ->references('id')
-                ->on('images')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
             $table->timestamps();
         });
     }

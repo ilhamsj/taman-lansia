@@ -9,6 +9,6 @@ $factory->define(Category::class, function (Faker $faker) {
     
     // $name = $faker->randomElement(['kegiatan', 'agenda', 'pengajian', 'penelitian', 'pengabdian']);
     return [
-        'name' => $faker->word
+        'name' => $faker->unique()->word
     ];
 });
