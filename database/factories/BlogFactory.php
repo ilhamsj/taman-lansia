@@ -9,6 +9,6 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'article_id' => $faker->numberBetween($min = 1, $max = 10),
         'category_id' => $faker->numberBetween($min = 1, $max = 5),
-        'image_id' => $faker->numberBetween($min = 1, $max = 10),
+        'image_id' => $faker->unique()->numberBetween($min = 1, $max = 6),
     ];
 });

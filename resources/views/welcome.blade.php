@@ -42,6 +42,7 @@
 @section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
 @section('content')
 
+<div class="blog">
 <div class="container">
     <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-12 col-sm-8">
@@ -51,6 +52,7 @@
             </p>
         </div>
     </div>
+</div>
 </div>
 
 <div id="about-us">
@@ -81,7 +83,7 @@
 @endforeach
 </div>
 
-<section id="blog">
+<section class="blog">
     <div class="container">
         <div class="row h-50 justify-content-center align-items-center flex-row">
             <div class="col">
@@ -141,8 +143,7 @@
             display: none;
         }
 
-        #blog {
-            background: chartreuse;
+        .blog {
             background-image: url('images/photo-1508963493744-76fce69379c0.jpg');
             background-attachment: fixed;
             background-size: cover;

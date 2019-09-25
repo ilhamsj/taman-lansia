@@ -70,22 +70,22 @@
             background-image: linear-gradient(225deg,#0abac2,#b2de94)
         }
 
-        #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
+        #mainNav a {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #0abac2
+        }
 
     </style>
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-expand-lg navbar-dark welcome shadow-sm" id="mainNav">
+    <nav class="navbar fixed-top navbar-default navbar-expand-lg bg-transparent" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">An-Naba</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <i data-feather="menu"></i>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto">
@@ -150,13 +150,13 @@
                     Taman Lansia An-Naba <br/>
                     Mempersiapkan Insan Utama dan Cerdas di Usia Senja
                 </div>
-                <div class="col-md mb-4">
+                <div class="col-6 col-md mb-4">
                     <h5 class="text-light-sm">Tentang An-Naba</h5>
                     @foreach ($tentang as $key)
                         <h6><a href="">{{$key}}</a></h6>
                     @endforeach
                 </div>
-                <div class="col-md mb-4 text-light-sm">
+                <div class="col col-md mb-4 text-light-sm">
                     <h5>Contact Us</h5>
                     @foreach ($contact as $key => $value)
                         <h6>
@@ -170,11 +170,11 @@
         </div>
     </footer>
     
-    <footer class="py-2 text-light" style="background-color:#181818ed">
+    <footer class="py-4 text-light" style="background-color:#181818ed">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md" style="font-size:small">
-                    Copyrights © {{date('Y')}} Taman Lansia An-Naba
+                <div class="col-md">
+                    <small class="text-muted">Copyrights © {{date('Y')}} Taman Lansia An-Naba</small>
                 </div>
                 <div class="col-md text-right">
                     <a href="" class="text-light-sm"><i data-feather="facebook"></i></a>
@@ -210,6 +210,19 @@
             placeholder: 'Hello bootstrap 4',
             tabsize: 2,
             height: 500
+        });
+
+        $(window).scroll(function () { 
+            if ($(document).scrollTop() > 100) {
+                $('nav').addClass('bg-light shadow-sm').removeClass('bg-transparent');
+            } else {
+                $('nav').addClass('bg-transparent').removeClass('bg-light shadow-sm');
+            }
+        });
+
+        $('.navbar-toggler').click(function (e) { 
+            e.preventDefault();
+            $('nav').addClass('bg-light shadow-sm').removeClass('bg-transparent');
         });
     </script>
     @stack('scripts')
