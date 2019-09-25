@@ -98,23 +98,22 @@
 
 <section id="blog-content">
     <div class="container py-4">
-        <div class="row align-items-between">
-        @foreach ($items as $item)
-            <div class="col-md-4 mb-4" data-aos="fade-up">
-                <div class="card">
-                    <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
-                        </h4>
-                        <p class="card-text">{!! Str::limit($item->description, 100) !!}</p>
-                        <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
-                            </small></p>
+        <div class="row align-items-between justify-content-center">
+            @foreach ($items as $item)
+                <div class="col-12 col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card">
+                        <img class="card-img-top" src="{{url('storage/images/'.$item->image->url)}}" alt="{{$item->image->name}}">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="{{route('article.show', $item->id)}}">{{$item->title}}</a>
+                            </h4>
+                            <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
+                                </small></p>
+                        </div>
+                        <div class="card-footer">{{$item->user->name}}</div>
                     </div>
-                    <div class="card-footer">{{$item->user->name}}</div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
             <div class="col-md-12 text-center">
                 <a data-aos="fade-up" href="" class="btn btn-outline-primary">Load More</a>
             </div>
@@ -186,7 +185,17 @@
         });
 
         $('#perkenalan .row div').first().hide();
-        
         $('.no-gutters:odd').addClass('flex-row-reverse');
-    </script>
+
+        $(window).resize(function () { 
+            console.log($(window).width());
+        });
+        
+        if ($(window).width() <= 768) {
+            $('#tujuan').addClass('mt-4');
+            
+        } else {
+            $('#tujuan').removeClass('mt-4');
+        }
+        </script>
 @endpush

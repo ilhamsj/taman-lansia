@@ -7,7 +7,7 @@
     <title>@yield('title') | Taman Lansia An-Naba</title>
     <meta name="csrf_token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="{{ secure_asset('css/montserrat.css') }}">
     <style>
         .display-6 {
             font-size: 1.5rem;
@@ -186,7 +186,6 @@
         </div>
     </footer>
     
-
     <script src="{{secure_asset('js/app.js')}}"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
