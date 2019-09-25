@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('image');
+            $table->string('slug');
             $table->string('title');
             $table->text('description');
             $table->string('category');

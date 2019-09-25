@@ -6,9 +6,11 @@ use App\Article;
 use Faker\Generator as Faker;
 
 $factory->define(Article::class, function (Faker $faker) {
+    $title = $faker->sentence($nbWords = 6, $variableNbWords = true);
     return [
         'user_id' => $faker->numberBetween($min = 1, $max = 10),
-        'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'title' => $title,
+        'slug' => Str::slug($title),
         'description' => $faker->text,
         'category' => $faker->unique()->word,
         'image' => $faker->unique()->randomElement([
