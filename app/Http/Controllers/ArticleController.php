@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreArticleRequest;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -58,8 +59,6 @@ class ArticleController extends Controller
 			} // <!--endif
         } // <!--endforeach
         
-        dd($dom->saveHTML());
-        
         $article = \App\Article::create([
             'user_id'       => $request->user_id,
             'title'         => $request->title,
@@ -103,6 +102,31 @@ class ArticleController extends Controller
 
     public function destroy($id)
     {
-        //
+        $item = \App\Article::find($id);
+
+        // Under Development
+        // $dom = new \DomDocument();
+        // $dom->loadHtml($item->description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        
+        // $images = $dom->getElementsByTagName('img');
+
+        // delete the summernote
+        // foreach($images as $img){
+        //     $src = $img->getAttribute('src');
+        //     $src = Str::after($src, env('app_url'));
+        //     unlink($src);
+        // }
+
+        // delete the storage
+        $file = 'public/images/'.$item->image;
+        $cek = Storage::exists($file);
+        if ($cek == true) {
+            Storage::delete($file);
+        }
+        $item->delete();
+
+        return redirect()->back()->with([
+            'status' =>  $item->title . ' Delete Success'
+        ]);
     }
 }

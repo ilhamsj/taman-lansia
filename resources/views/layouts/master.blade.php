@@ -68,6 +68,10 @@
         .welcome {
             background-image: linear-gradient(225deg,#0abac2,#b2de94)
         }
+
+        .navbar-nav .dropdown-menu {
+            border-radius: 0.9rem
+        }
     </style>
     @stack('styles') 
 </head>
@@ -93,7 +97,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Profile
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Login</a>
                             <a class="dropdown-item" href="#">Register</a>
                             <a class="dropdown-item" href="#">Profile</a>

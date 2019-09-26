@@ -50,9 +50,9 @@
     <style>
         .show-cover {
             background-image: url("{{secure_asset('storage/images/'.$item->image)}}");
-            background-size: cover;
             background-attachment: fixed;
             background-size: cover;
+            background-position: center;
         }
 
         .cover {

@@ -63,6 +63,7 @@
             background: chartreuse;
             background-image: url('images/photo-1508963493744-76fce69379c0.jpg');
             background-size: cover;
+            background-position: center;
         }
 
         .border-radius-20 {
