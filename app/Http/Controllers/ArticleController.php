@@ -12,7 +12,8 @@ class ArticleController extends Controller
     public function index()
     {
         return view('article.index')->with([
-            'items' => \App\Article::orderBy('created_at', 'desc')->simplePaginate(5)
+            'items' => \App\Article::orderBy('created_at', 'desc')->simplePaginate(5),
+            'status' => 'he'
         ]);
     }
 
@@ -57,8 +58,6 @@ class ArticleController extends Controller
     public function update(StoreArticleRequest $request, $id)
     {
         $article = \App\Article::find($id);
-        $image = \App\Image::find($article->image->id);
-        
         $article->update($request->all());
 
         return redirect()->route('admin.index')->with([
