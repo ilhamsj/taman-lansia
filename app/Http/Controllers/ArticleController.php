@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreArticleRequest;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -60,7 +61,7 @@ class ArticleController extends Controller
         } // <!--endforeach
         
         $article = \App\Article::create([
-            'user_id'       => $request->user_id,
+            'user_id'       => Auth::user()->id,
             'title'         => $request->title,
             'category'      => $request->category,
             'slug'          => Str::slug($request->title),
