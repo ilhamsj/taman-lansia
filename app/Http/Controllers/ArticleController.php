@@ -70,7 +70,7 @@ class ArticleController extends Controller
         
         $request->file('image')->store('public/images');
 
-        return redirect()->back()->with([
+        return redirect()->route('admin.index')->with([
             'status' => 'Create Success'
         ]);
     }
@@ -90,7 +90,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function update(StoreArticleRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $article = \App\Article::find($id);
         $article->update($request->all());

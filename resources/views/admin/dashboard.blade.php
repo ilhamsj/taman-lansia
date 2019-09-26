@@ -121,7 +121,9 @@
                                             {{\Carbon\Carbon::parse($item->created_at)->format('d M Y h:i:s')}}
                                         </td>
                                         <td>
-                                            <a class="btn btn-danger btn-sm" href=""><i data-feather="edit"></i></a>
+                                            <a class="btn btn-danger btn-sm" href="{{ route('article.edit', $item->id) }}">
+                                                <i data-feather="edit"></i>
+                                            </a>
                                             <form id="delete-form" action="{{ route('article.destroy', $item->id)}}" method="post">
                                                 @method('DELETE')
                                                 @csrf
