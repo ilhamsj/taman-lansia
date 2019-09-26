@@ -94,12 +94,10 @@
                             Profile
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @guest
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-                            @else
-                                <a class="dropdown-item" href="#">Profile</a>
-                            @endguest
+                            <a class="dropdown-item" href="#">Login</a>
+                            <a class="dropdown-item" href="#">Register</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="{{ route('admin.index') }}">Admin</a>
                         </div>
                     </li>
                 </ul>
