@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         .left {min-height: 100vh}
+        .h-100 {min-height: 100vh}
     </style>
 </head>
 <body>
@@ -56,9 +57,9 @@
     </div>
     </nav>
 
-    <div class="mt-4">
+    <main class="py-4">
         @yield('content')
-    </div>
+    </main>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>

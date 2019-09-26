@@ -61,7 +61,7 @@ class ArticleController extends Controller
         } // <!--endforeach
         
         $article = \App\Article::create([
-            'user_id'       => Auth::user()->id,
+            'user_id'       => 1,
             'title'         => $request->title,
             'category'      => $request->category,
             'slug'          => Str::slug($request->title),
@@ -71,7 +71,7 @@ class ArticleController extends Controller
         
         $request->file('image')->store('public/images');
 
-        return redirect()->route('admin.index')->with([
+        return redirect()->route('admin.article')->with([
             'status' => 'Create Success'
         ]);
     }
@@ -96,8 +96,8 @@ class ArticleController extends Controller
         $article = \App\Article::find($id);
         $article->update($request->all());
 
-        return redirect()->route('admin.index')->with([
-            'status' => 'Update Success'
+        return redirect()->route('admin.article')->with([
+            'status' => 'Create Success'
         ]);
     }
 
@@ -126,7 +126,7 @@ class ArticleController extends Controller
         }
         $item->delete();
 
-        return redirect()->back()->with([
+        return redirect()->route('admin.article')->with([
             'status' =>  $item->title . ' Delete Success'
         ]);
     }
