@@ -60,5 +60,5 @@ Route::resource('user', 'UserController');
 Route::resource('article', 'ArticleController');
 
 Route::get('admin', 'AdminController@index')->name('admin.index');
-Route::get('admin/user', 'AdminController@user');
-Route::get('admin/article', 'AdminController@article');
+Route::get('admin/user', 'AdminController@user')->name('admin.user');
+Route::get('admin/article', 'AdminController@article')->name('admin.article');
