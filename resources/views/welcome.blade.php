@@ -17,7 +17,7 @@
 
 <div id="about-us">
 @foreach ($about as $key => $value)
-<div  data-aos="zoom-in" class="container mb-4">
+<div data-aos="zoom-in" class="container mb-4">
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-md-10">
             <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
@@ -118,6 +118,7 @@
             max-width: 50%;
         }
         
+        
     </style>
 @endpush
 
@@ -153,9 +154,11 @@
         
         if ($(window).width() <= 768) {
             $('#tujuan').addClass('mt-4');
-            
+            $('.welcome').css('border-radius', '1rem 1rem 0 0');
         } else {
             $('#tujuan').removeClass('mt-4');
+            $('.welcome').css('border-radius', '1rem 0 0 1rem');
+            $('.no-gutters:odd .welcome').css('border-radius', '0 1rem 1rem 0');
         }
         </script>
 @endpush
