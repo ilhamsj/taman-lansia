@@ -27,9 +27,8 @@ class StoreArticleRequest extends FormRequest
             'user_id' => 'required',
             'title' => 'required',
             'description' => 'required',
-            'alt' => 'required',
-            'url' => 'required',
-            'name' => 'required',
+            'image' => 'required',
+            'category' => 'required',
         ];
     }
 }

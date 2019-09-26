@@ -13,6 +13,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-expand-lg border-bottom">
+        <div class="container">
         <a class="navbar-brand" href="{{route('/')}}">
             <img src="{{ secure_asset('images/apple-touch-icon.png') }}" width="30" height="30" alt="" srcset="">
         </a>
@@ -43,34 +44,19 @@
                 </li>
             </ul>
         </div>
+    </div>
     </nav>
-        
-    <div class="d-flex">
-        <div class="left col-3 col-sm-2 p-0 bg-warning border-right">
-            <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action disabled">Active item</a>
-                <a href="#" class="list-group-item list-group-item-action">Item</a>
-                <a href="#" class="list-group-item list-group-item-action">Item</a>
-                <a href="#" class="list-group-item list-group-item-action">Item</a>
-                <a href="#" class="list-group-item list-group-item-action">Item</a>
-            </div>
-        </div>
-        <div class="right col p-3 bg-light">
-            <div>
-                <button id="menu-toggle" class="btn btn-success btn-sm">Menu</button>
-            </div>
-            <div>
-                @yield('content')
-            </div>
-        </div>
+
+    <div class="mt-4">
+        @yield('content')
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        $('#menu-toggle').click(function (e) { 
-            e.preventDefault();
-            $('.left').toggle(500);
+        $(document).ready(function() {
+            $('table').DataTable();
         });
     </script>
+    @stack('scripts')
 </body>
 </html>

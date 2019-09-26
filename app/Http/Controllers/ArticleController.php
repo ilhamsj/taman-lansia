@@ -21,7 +21,7 @@ class ArticleController extends Controller
         return view('article.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {
         $article = \App\Article::create([
             'user_id' => $request->user_id,

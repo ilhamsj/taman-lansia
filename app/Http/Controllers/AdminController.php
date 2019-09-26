@@ -8,15 +8,24 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin')->with([
-            'items' => \App\Article::all(),
+        return view('admin.dashboard')->with([
+            'users' => \App\User::orderBy('created_at', 'desc')->get(),
+            'articles' => \App\Article::orderBy('created_at', 'desc')->get(),
+            'no' => 1,
         ]);
     }
 
-    public function show($id)
+    public function user()
     {
-        return view('show')->with([
-            'item' => \App\User::find($id),
+        return view('admin.user')->with([
+            'items' => \App\User::all(),
+        ]);
+    }
+
+    public function article()
+    {
+        return view('admin.article')->with([
+            'items' => \App\Article::all(),
         ]);
     }
 }
