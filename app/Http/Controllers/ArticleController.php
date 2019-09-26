@@ -24,13 +24,49 @@ class ArticleController extends Controller
 
     public function store(StoreArticleRequest $request)
     {
+        $message = $request->description;
+        $dom = new \DomDocument();
+        $dom->loadHtml($message, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        
+		$images = $dom->getElementsByTagName('img');
+
+		// foreach <img> in the submited message
+		foreach($images as $img){
+			$src = $img->getAttribute('src');
+			
+			// if the img source is 'data-url'
+			if(preg_match('/data:image/', $src)){
+				
+				// get the mimetype
+				preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+				$mimetype = $groups['mime'];
+				
+				// Generating a random filename
+				$filename = uniqid();
+				$filepath = "/images/$filename.$mimetype";
+	
+				// @see http://image.intervention.io/api/
+				$image = Image::make($src)
+				  // resize if required
+				  /* ->resize(300, 200) */
+				  ->encode($mimetype, 100) 	// encode file to the specified mimetype
+				  ->save(public_path($filepath));
+				
+				$new_src = asset($filepath);
+				$img->removeAttribute('src');
+				$img->setAttribute('src', $new_src);
+			} // <!--endif
+        } // <!--endforeach
+        
+        dd($dom->saveHTML());
+        
         $article = \App\Article::create([
-            'user_id' => $request->user_id,
-            'image' => $request->file('image')->hashName(),
-            'slug' => Str::slug($request->title),
-            'title' => $request->title,
-            'description' => $request->description,
-            'category' => $request->category,
+            'user_id'       => $request->user_id,
+            'title'         => $request->title,
+            'category'      => $request->category,
+            'slug'          => Str::slug($request->title),
+            'description'   => $dom->saveHTML(),
+            'image'         => $request->file('image')->hashName(),
         ]);
         
         $request->file('image')->store('public/images');
