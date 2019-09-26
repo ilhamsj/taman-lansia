@@ -11,9 +11,6 @@
                 <p class="lead" data-aos="slide-right">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
                 </p>
-                <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">
-                    <i data-feather="plus-square"></i>
-                </a>
             </div>
         </div>
     </div>
@@ -58,7 +55,6 @@
     </div>
 </div>
 
-@include('include._create')
 @endsection
 
 @push('styles')

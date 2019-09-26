@@ -8,11 +8,14 @@
             <div class="card shadow">
                 <div class="card-header">
                     <strong class="text-primary">Data Article</strong>
+                    <button id="new-button" class="btn btn-success btn-sm">
+                        <i data-feather="plus-square"></i>
+                    </button>
                 </div>
                 <div class="card-body">
                     <h4>{{ count($articles)}} <span class="text-muted">Artikel</span></h4>
                 </div>
-                <div id="create-form" class="card-body">
+                <div class="card-body collapse">
                     <form action="{{ route('article.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group collapse">
@@ -167,9 +170,9 @@
             height: 500
         });
 
-        // $('.card-header').click(function (e) { 
-        //     e.preventDefault();
-        //     $('#create-form').slideToggle();
-        // });
+        $('#new-button').click(function (e) { 
+            e.preventDefault();
+            $('.card-body:nth-child(3)').slideToggle();
+        });
     </script>
 @endpush
