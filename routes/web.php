@@ -62,3 +62,6 @@ Route::resource('article', 'ArticleController');
 Route::get('admin', 'AdminController@index')->name('admin.index');
 Route::get('admin/user', 'AdminController@user')->name('admin.user');
 Route::get('admin/article', 'AdminController@article')->name('admin.article');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
