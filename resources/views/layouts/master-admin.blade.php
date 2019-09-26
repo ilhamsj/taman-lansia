@@ -26,10 +26,10 @@
                     <a class="nav-link" href="{{route('article.index')}}">Blog <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('kategori.show', 'kegiatan')}}">Kegiatan</a>
+                    <a class="nav-link" href="">Kegiatan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('kategori.show', 'agenda')}}">Agenda</a>
+                    <a class="nav-link" href="">Agenda</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
