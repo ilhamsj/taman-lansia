@@ -12,7 +12,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('article.index')->with([
-            'items' => \App\Article::orderBy('created_at', 'desc')->get()
+            'items' => \App\Article::orderBy('created_at', 'desc')->simplePaginate(5)
         ]);
     }
 

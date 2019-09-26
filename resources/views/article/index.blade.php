@@ -50,6 +50,9 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="col-12">
+                    {{ $items->links()}}
+                </div>
             </div>
         </div>
     </div>

@@ -198,7 +198,7 @@
 
         $(window).scroll(function () { 
             if ($(document).scrollTop() > 100) {
-                $('nav').addClass('bg-light shadow-sm').removeClass('bg-transparent');
+                $('nav').first().addClass('bg-light shadow-sm').removeClass('bg-transparent');
             } else {
                 $('nav').addClass('bg-transparent').removeClass('bg-light shadow-sm');
             }
