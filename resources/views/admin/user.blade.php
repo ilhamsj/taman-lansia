@@ -14,6 +14,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Username</th>
@@ -22,7 +23,8 @@
                             <tbody>
                                 @foreach ($users as $item)
                                     <tr>
-                                        <td scope="row">{{ $item->name }}</td>
+                                        <td scope="row">{{ $no++ }}</td>
+                                        <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>

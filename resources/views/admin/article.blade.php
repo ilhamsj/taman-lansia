@@ -20,9 +20,6 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4>{{ count($articles)}} <span class="text-muted">Artikel</span></h4>
-                </div>
-                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
