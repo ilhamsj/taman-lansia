@@ -81630,8 +81630,7 @@ __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jque
 
 __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
 
-__webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css"); // require('swiper/src/swiper');
-
+__webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
 
 var AOS = __webpack_require__(/*! aos/dist/aos */ "./node_modules/aos/dist/aos.js");
 

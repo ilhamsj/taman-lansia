@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row h-100 align-items-center">
+    <div class="row">
         @foreach ($items as $key => $value)
         <div class="col-12 col-sm mb-3">
             <div class="card shadow">
@@ -25,7 +25,6 @@
 @push('scripts')
     
     <script>
-        $('nav').addClass('fixed-top');
-        $('main').removeClass('py-4');
+        
     </script>
 @endpush
