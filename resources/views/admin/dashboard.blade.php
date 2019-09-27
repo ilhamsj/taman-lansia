@@ -8,7 +8,7 @@
         <div class="col-12 col-sm mb-3">
             <div class="card shadow">
                 <div class="card-header">
-                    <strong class="text-primary">Data {{$key}}</strong>
+                    Data {{$key}}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{$value}} <span class="text-muted">{{$key}}</span></h4>
