@@ -67,7 +67,7 @@ class ArticleController extends Controller
         } // <!--endforeach
         
         $article = \App\Article::create([
-            'user_id'       => 1,
+            'user_id'       => Auth::user()->id,
             'title'         => $request->title,
             'category'      => $request->category,
             'slug'          => Str::slug($request->title),

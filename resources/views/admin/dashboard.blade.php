@@ -6,14 +6,16 @@
     <div class="row">
         @foreach ($items as $key => $value)
         <div class="col-12 col-sm mb-3">
-            <div class="card shadow">
+            <div class="card shadow bg-light">
                 <div class="card-header">
                     Data {{$key}}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{$value}} <span class="text-muted">{{$key}}</span></h4>
-                    <a href="{{route('admin.'.$key)}}" class="card-link">Detail</a>
-                    <a href="{{route($key.'.create')}}" class="card-link">Tambah</a>
+                </div>
+                <div class="card-body">
+                    <a href="{{route('admin.'.$key)}}" class="btn btn-primary btn-sm">Detail</a>
+                    <a href="{{route($key.'.create')}}" class="btn btn-primary btn-sm">Tambah</a>
                 </div>
             </div>
         </div>
