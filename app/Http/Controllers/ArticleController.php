@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreArticleRequest;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -106,17 +107,20 @@ class ArticleController extends Controller
         $item = \App\Article::find($id);
 
         // Under Development
-        // $dom = new \DomDocument();
-        // $dom->loadHtml($item->description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $dom = new \DomDocument();
+        @$dom->loadHtml($item->description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         
-        // $images = $dom->getElementsByTagName('img');
+        $images = $dom->getElementsByTagName('img');
 
         // delete the summernote
-        // foreach($images as $img){
-        //     $src = $img->getAttribute('src');
-        //     $src = Str::after($src, env('app_url'));
-        //     unlink($src);
-        // }
+        foreach($images as $img){
+            $src = $img->getAttribute('src');
+            $src = Str::after($src, env('app_url'));
+
+            if (File::exists($src) == true) {
+                unlink($src);
+            }
+        }
 
         // delete the storage
         $file = 'public/images/'.$item->image;
