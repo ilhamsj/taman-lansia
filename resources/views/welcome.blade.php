@@ -149,13 +149,20 @@
         $('.no-gutters:odd').addClass('flex-row-reverse');
         
 
-        if ($(window).width() <= 768) {
-            $('#tujuan').addClass('mt-4');
-            $('.welcome').css('border-radius', '1rem 1rem 0 0');
-        } else {
-            $('#tujuan').removeClass('mt-4');
-            $('.welcome').css('border-radius', '1rem 0 0 1rem');
-            $('.no-gutters:odd .welcome').css('border-radius', '0 1rem 1rem 0');
+        function resize() {
+            if ($(window).width() <= 768) {
+                $('#tujuan').addClass('mt-4');
+                $('.welcome').css('border-radius', '1rem 1rem 0 0');
+            } else {
+                $('#tujuan').removeClass('mt-4');
+                $('.welcome').css('border-radius', '1rem 0 0 1rem');
+                $('.no-gutters:odd .welcome').css('border-radius', '0 1rem 1rem 0');
+            }
         }
+
+        $(document).ready(function () {
+            resize();
+            $(window).resize(resize);
+        });
     </script>
 @endpush

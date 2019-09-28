@@ -35,13 +35,10 @@
 @push('scripts')
     <script>
         $('nav').removeClass('fixed-top');
-        $('.card').hover(
-            function () {
-                var x = '.'+$(this).attr('id');
-                $(x).slideToggle();
+        $('.card').hover(function () {
+                $(this).find('.card-body').slideToggle();
             }, function () {
-                var x = '.'+$(this).attr('id');
-                $(x).slideToggle();
+                $(this).find('.card-body').slideToggle();
             }
         );
     </script>

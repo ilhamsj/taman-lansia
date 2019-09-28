@@ -24,9 +24,6 @@
 
         <div class="col">
             <div class="row">
-                <div class="col-12 mb-4">
-                    Update Terbaru
-                </div>
                 @foreach ($items as $item)
                     <div class="col-12 mb-4" data-aos="fade-up">
                         <div class="card shadow">
