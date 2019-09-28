@@ -35,7 +35,8 @@ class AdminController extends Controller
     public function article()
     {
         return view('admin.article')->with([
-            'articles' => \App\Article::where('user_id', \Auth::user()->id)->orderBy('created_at', 'desc')->get(),
+            // 'articles' => \App\Article::where('user_id', \Auth::user()->id)->orderBy('created_at', 'desc')->get(),
+            'articles' => \App\Article::orderBy('created_at', 'desc')->get(),
             'no' => 1,
         ]);
     }

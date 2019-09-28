@@ -92,7 +92,7 @@
                         <a class="nav-link" href="{{route('article.index')}}">Blog <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Kegiatan</a>
+                        <a class="nav-link" href="{{ route('article.category')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Agenda</a>

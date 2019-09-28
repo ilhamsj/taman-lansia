@@ -65,3 +65,8 @@ Route::get('admin/article', 'AdminController@article')->name('admin.article');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/article/kategori/kegiatan', function() {
+    return view('article.gallery')->with([
+        'items' => \App\Article::orderBy('created_at', 'desc')->where('category', 'kegiatan')->get(),
+    ]);
+})->name('article.category');
