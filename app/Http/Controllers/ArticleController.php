@@ -99,8 +99,29 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
+        dd($request->all());
         $article = \App\Article::find($id);
-        $article->update($request->all());
+
+        $status = '';
+        if ($request->image == null) {
+            $article->update($request->all());
+        } else {
+            // delete the storage
+            $file = 'public/images/'.$article->image;
+            $cek = Storage::exists($file);
+            if ($cek == true) {
+                Storage::delete($file);
+            }
+
+            $article->update([
+                'user_id'       => Auth::user()->id,
+                'title'         => $request->title,
+                'category'      => $request->category,
+                'slug'          => Str::slug($request->title),
+                'image'         => $request->file('image')->hashName(),
+            ]);
+            $request->file('image')->store('public/images');
+        }
 
         return redirect()->route('admin.article')->with([
             'status' => 'Create Success'
