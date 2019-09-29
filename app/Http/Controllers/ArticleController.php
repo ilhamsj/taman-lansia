@@ -99,10 +99,8 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->all());
         $article = \App\Article::find($id);
 
-        $status = '';
         if ($request->image == null) {
             $article->update($request->all());
         } else {

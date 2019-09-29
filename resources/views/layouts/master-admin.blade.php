@@ -11,6 +11,7 @@
         .left {min-height: 100vh}
         .h-100 {min-height: 100vh}
     </style>
+    @stack('styles')
 </head>
 <body>
     <nav class="navbar navbar-default navbar-expand-lg border-bottom shadow-sm">

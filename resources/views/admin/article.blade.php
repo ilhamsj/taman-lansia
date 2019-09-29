@@ -48,8 +48,8 @@
                                         <td>
                                             {{\Carbon\Carbon::parse($item->created_at)->format('d M Y h:i:s')}}
                                         </td>
-                                        <td>
-                                            <a class="btn btn-danger btn-sm" href="{{ route('article.edit', $item->id) }}">
+                                        <td class="text-center">
+                                            <a class="btn btn-secondary btn-sm" href="{{ route('article.edit', $item->id) }}">
                                                 <i data-feather="edit"></i>
                                             </a>
                                             <form id="delete-form" action="{{ route('article.destroy', $item->id)}}" method="post">
@@ -119,4 +119,12 @@
             $('.card-body:nth-child(3)').slideToggle();
         });
     </script>
+@endpush
+
+@push('styles')
+    <style>
+        .btn {
+            border-radius: 0;
+        }
+    </style>
 @endpush
