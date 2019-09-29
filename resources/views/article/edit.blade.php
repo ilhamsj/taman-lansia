@@ -1,4 +1,5 @@
 @extends('layouts.master-admin')
+@section('title', 'Edit '. $item->title)
 
 @section('content')
 
@@ -14,8 +15,13 @@
         @endif
         <div class="col-12 col-sm-8 mb-3">
             <div class="card shadow">
-                <div class="card-header">
-                    <strong class="text-primary">Edit</strong>
+                <div class="card-header d-flex justify-content-between">
+                    <a href="{{ url()->previous() }}" class="btn btn-primary btn-sm">
+                        Back
+                    </a>
+                    <span>
+                         <span class="text-muted">Edit</span> {{$item->title}}
+                    </span>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('article.update', $item->id)}}" method="post" enctype="multipart/form-data">
