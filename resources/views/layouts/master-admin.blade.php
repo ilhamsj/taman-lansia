@@ -5,10 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        {{-- {{ Str::after(url()->current(), env('app_url')) }} --}}
-        {{ env('app_name') .' | '. Str::title(str_replace('/', ' ', Str::after(url()->current(), env('app_url'))))}}
-    </title>
+    <title>@yield('title') | Taman Lansia An-Naba</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         .left {min-height: 100vh}

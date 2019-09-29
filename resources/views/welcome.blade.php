@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Mempersiapkan insan utama dan cerdas di usia senja')
+@section('title', 'Welcome')
 @section('content')
 
 <div class="blog">
