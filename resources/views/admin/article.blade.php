@@ -15,7 +15,10 @@
         @endif
         <div class="col-12 col-sm mb-3">
             <div class="card shadow">
-                <div class="card-header text-right">
+                <div class="card-header text-right d-flex justify-content-between">
+                    <span>
+                        {{count($articles)}} Artikel
+                    </span>
                     <a href="{{ route('article.create') }}" class="btn btn-primary btn-sm">
                         Tambah Artikel
                     </a>
