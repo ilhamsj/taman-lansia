@@ -5,6 +5,14 @@
 
 <div class="container">
     <div class="row">
+        @if (session('status'))
+        <div class="col-12">
+            <div class="alert alert-success" role="alert">
+                <strong>{{ session('status') }}</strong>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        </div>
+        @endif
         <div class="col-12 col-sm mb-3">
             <div class="card shadow">
                 <div class="card-header">

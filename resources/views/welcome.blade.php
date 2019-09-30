@@ -3,20 +3,41 @@
 @section('content')
 
 <div class="blog">
-<div class="container">
-    <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-12 col-sm-10">
-            <div class="card cover border-0">
-                <div class="card-body">
-                    <h1 data-aos="slide-left" class="dispay-2">Taman Lansia An-naba</h1>
-                    <p data-aos="slide-right" class="lead">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, quisquam tenetur tempore aliquid itaque quas natus excepturi eaque labore molestias mollitia atque quos, ducimus impedit ad vitae sunt perferendis! Pariatur?
-                    </p>
+    <div class="container">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-sm-10">
+                <div class="card cover border-0">
+                    <div class="card-body">
+                        <h1 data-aos="slide-left" class="dispay-2">Taman Lansia An-naba</h1>
+                        <p data-aos="slide-right" class="lead">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, quisquam tenetur tempore aliquid itaque quas natus excepturi eaque labore molestias mollitia atque quos, ducimus impedit ad vitae sunt perferendis! Pariatur?
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@php
+    $img = \File::allFiles(public_path('images'));
+@endphp
+
+<div class="blog">
+    <div class="container">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-sm-10">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach ($img as $value)
+                            <img class="swiper-slide img-fluid" data-src="holder.js/1110x200?random=yes&textmode=exact&" alt="" srcset="">
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="about-us">
@@ -47,9 +68,8 @@
 @endforeach
 </div>
 
-<section class="blog">
     <div class="container">
-        <div class="row h-50 justify-content-center align-items-center flex-row">
+        <div class="row h-50">
             <div class="col">
                 <h1 data-aos="fade-up">Kegiatan Terbaru</h1>
                 <p  data-aos="fade-up" class="lead">
@@ -58,7 +78,6 @@
             </div>
         </div>
     </div>
-</section>
 
 <section id="blog-content">
     <div class="container py-4">
@@ -102,6 +121,7 @@
 @endsection
 
 @push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <style>
         #blog-content .card-footer 
         {
@@ -133,7 +153,15 @@
 @endpush
 
 @push('scripts')
-
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            }
+        });
+    </script>
     <script>
         $("#blog-content .card").hover(
             function () {
