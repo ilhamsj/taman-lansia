@@ -202,6 +202,7 @@
     </footer>
     
     <script src="{{secure_asset('js/app.js')}}"></script>
+    <script src="{{secure_asset('js/swiper.min.js')}}"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');

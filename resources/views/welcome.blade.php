@@ -23,22 +23,23 @@
     $img = \File::allFiles(public_path('images'));
 @endphp
 
-<div class="blog">
-    <div class="container">
-        <div class="row h-100 align-items-center justify-content-center">
-            <div class="col-12 col-sm-10">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        @foreach ($img as $value)
-                            <img class="swiper-slide img-fluid" data-src="holder.js/1110x200?random=yes&textmode=exact&" alt="" srcset="">
-                        @endforeach
-                    </div>
-                    <div class="swiper-pagination"></div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach ($img as $value)
+                        <img class="swiper-slide img-fluid" src="http://an-naba.test/images/5d8ec83c315f3.jpeg" alt="" srcset="">
+                    @endforeach
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div id="about-us">
 @foreach ($about as $key => $value)
@@ -121,7 +122,6 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <style>
         #blog-content .card-footer 
         {
@@ -153,13 +153,23 @@
 @endpush
 
 @push('scripts')
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            cssMode: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
             pagination: {
                 el: '.swiper-pagination',
-                dynamicBullets: true,
-            }
+                clickable: true,
+            },
+            mousewheel: true,
+            keyboard: true,
         });
     </script>
     <script>
