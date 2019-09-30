@@ -33,6 +33,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.user') }}">User</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.gallery') }}">Gallery</a>
+                </li>
 
                 @auth
                 <li class="nav-item dropdown">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -37,6 +38,26 @@ class AdminController extends Controller
         return view('admin.article')->with([
             'articles' => \App\Article::orderBy('created_at', 'desc')->get(),
             'no' => 1,
+        ]);
+    }
+
+    public function gallery() {
+        $img = \File::allFiles(public_path('images'));
+        return view('admin.gallery')->with([
+            'images' => $img,
+            'no' => 1
+        ]);
+    }
+
+    public function deleteImage($image) {
+
+        $src = 'images/'.$image;
+        if (\File::exists($src) == true) {
+            unlink($src);
+        }
+
+        return redirect()->back()->with([
+            'status' => 'Sukses'
         ]);
     }
 }

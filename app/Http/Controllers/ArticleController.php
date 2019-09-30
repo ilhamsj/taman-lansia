@@ -21,7 +21,6 @@ class ArticleController extends Controller
     {
         return view('article.index')->with([
             'items' => \App\Article::orderBy('created_at', 'desc')->simplePaginate(5),
-            'status' => 'he'
         ]);
     }
 
@@ -104,7 +103,6 @@ class ArticleController extends Controller
         if ($request->image == null) {
             $article->update($request->all());
         } else {
-            // delete the storage
             $file = 'public/images/'.$article->image;
             $cek = Storage::exists($file);
             if ($cek == true) {

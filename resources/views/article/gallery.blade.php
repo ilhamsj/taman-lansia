@@ -21,9 +21,29 @@
     </div>
 </div>
 
+@php
+    $img = \File::allFiles(public_path('images'));
+@endphp
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach ($img as $value)
+                        <img class="swiper-slide img-fluid" src="../images/{{$value->getFilename()}}" alt="" srcset="">
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <style>
         .card-img-overlay .card-body {
             background-color: rgba(0,0,0,.5);
@@ -45,6 +65,16 @@
 @endpush
 
 @push('scripts')
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            }
+        });
+    </script>
+
     <script>
         $('nav').removeClass('fixed-top');
         $('.card').hover(function () {

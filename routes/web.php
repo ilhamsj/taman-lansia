@@ -62,6 +62,8 @@ Route::get('admin', 'AdminController@index')->name('admin.index');
 Route::get('admin/user', 'AdminController@user')->name('admin.user');
 Route::get('admin/user/create', 'AdminController@user')->name('user.create');
 Route::get('admin/article', 'AdminController@article')->name('admin.article');
+Route::get('admin/gallery', 'AdminController@gallery')->name('admin.gallery');
+Route::get('admin/gallery/delete/{image}', 'AdminController@deleteImage')->name('admin.deleteImage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
