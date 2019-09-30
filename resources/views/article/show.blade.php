@@ -12,7 +12,7 @@
                 <div class="row">
                     <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
                         <span class="text-muted">Oleh</span> <br/>
-                        <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a>
+                        <a href="">{{$item->user->name}}</a>
                     </div>
                     <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
                         <span class="text-muted">Kategori</span> <br/>
@@ -44,7 +44,7 @@
                             {!! $item->description !!}
                         </p>
                         <footer class="blockquote-footer">
-                            <a href="{{ route('user.show', $item->user->id) }}">{{$item->user->name}}</a> at
+                            <a href="">{{$item->user->name}}</a> at
                             <cite title="Source Title"><a href="" class="card-link">{{$item->category}}</a></cite>
                         </footer>
                     </div>

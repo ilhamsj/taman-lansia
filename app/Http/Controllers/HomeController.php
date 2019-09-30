@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -24,5 +24,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function category($name)
+    {
+        return view('article.gallery')->with([
+            'items' => \App\Article::where('category', $name)->get()
+        ]);
     }
 }

@@ -39,7 +39,7 @@
                             <div class="card-footer">
                                 <a href="">{{$item->user->name}}</a>  /
                                 {{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}} /
-                                <a href="">{{$item->category}}</a>
+                                <a href="{{ route('article.category', $item->category) }}">{{$item->category}}</a>
                             </div>
                         </div>
                     </div>

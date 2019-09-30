@@ -56,17 +56,13 @@ Route::get('/', function () {
     ]);
 })->name('/');
 
-Route::resource('user', 'UserController');
 Route::resource('article', 'ArticleController');
 
 Route::get('admin', 'AdminController@index')->name('admin.index');
 Route::get('admin/user', 'AdminController@user')->name('admin.user');
+Route::get('admin/user/create', 'AdminController@user')->name('user.create');
 Route::get('admin/article', 'AdminController@article')->name('admin.article');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/article/kategori/kegiatan', function() {
-    return view('article.gallery')->with([
-        'items' => \App\Article::orderBy('created_at', 'desc')->where('category', 'kegiatan')->get(),
-    ]);
-})->name('article.category');
+Route::get('/kategori/{name}', 'HomeController@category')->name('article.category');

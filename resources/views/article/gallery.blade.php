@@ -7,20 +7,6 @@
 <div class="container py-4">
     <div class="card-columns">
         @foreach ($items as $item)
-        <div class="card">
-            <div class="card-img-top">
-                <div class="zoom zoom-rotate">
-                    <img src="{{ secure_asset('storage/images/'.$item->image) }}" class="img-fluid"> 
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
-
-<div class="container py-4">
-    <div class="card-columns">
-        @foreach ($items as $item)
             <div class="card" id="kegiatan{{ $item->id }}">
                 <img src="{{ secure_asset('storage/images/'.$item->image) }}" class="card-img-top"> 
                 <div class="card-img-overlay d-flex align-items-end p-0">

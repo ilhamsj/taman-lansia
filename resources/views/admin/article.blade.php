@@ -30,7 +30,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Author</th>
-                                    <th>Title</th>
+                                    <th class="col">Title</th>
                                     <th>Kategori</th>
                                     <th>Gambar</th>
                                     <th>Tanggal</th>
@@ -44,7 +44,11 @@
                                         <td>{{ $item->user->name }}</td>
                                         <td>
                                             <a href="{{ route('article.show', $item->slug) }}">{{$item->title}}</td></a>
-                                        <td>{{ $item->category  }}</td>
+                                        <td>
+                                            <a href="{{ route('article.category', $item->category)}}">
+                                                {{ $item->category  }}
+                                            </a>
+                                        </td>
                                         <td>
                                             <img class="img-fluid img-thumbnail" src="{{ secure_asset('storage/images/'.$item->image)}}" alt="" srcset="">
                                         </td>
