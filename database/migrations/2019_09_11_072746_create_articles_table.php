@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('slug');
             $table->string('title');
             $table->text('description');
