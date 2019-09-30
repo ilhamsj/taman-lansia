@@ -4,12 +4,16 @@
 
 <div class="blog">
 <div class="container">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-12 col-sm-8">
-            <h1 data-aos="slide-left" class="dispay-2">Taman Lansia An-naba</h1>
-            <p data-aos="slide-right" class="lead">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, quisquam tenetur tempore aliquid itaque quas natus excepturi eaque labore molestias mollitia atque quos, ducimus impedit ad vitae sunt perferendis! Pariatur?
-            </p>
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-12 col-sm-10">
+            <div class="card cover border-0">
+                <div class="card-body">
+                    <h1 data-aos="slide-left" class="dispay-2">Taman Lansia An-naba</h1>
+                    <p data-aos="slide-right" class="lead">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis, quisquam tenetur tempore aliquid itaque quas natus excepturi eaque labore molestias mollitia atque quos, ducimus impedit ad vitae sunt perferendis! Pariatur?
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -105,9 +109,15 @@
         }
 
         .blog {
-            background-image: url('images/photo-1508963493744-76fce69379c0.jpg');
+            background-image: url('images/hussain-ibrahim-cozpTyRDIwI-unsplash.jpg');
             background-attachment: fixed;
             background-size: cover;
+        }
+
+        .cover {
+            background-image: linear-gradient(225deg,#0abac2,#b2de94);
+            border-radius: 1.25rem;
+            opacity: 0.8;
         }
 
         h1 {
