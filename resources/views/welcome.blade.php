@@ -49,7 +49,7 @@
             <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
                 <div class="row align-items-center no-gutters flex-row">
                     <div class="col-md-5 p-4 text-center welcome">
-                        <img src="{{ secure_asset('images/lifecycle-works.png') }}" class="img-fluid">
+                            <img src="{{ secure_asset('images/lifecycle-works.png') }}" class="img-fluid">
                     </div>
                     <div class="col-md">
                         <div class="card-body">
@@ -69,16 +69,19 @@
 @endforeach
 </div>
 
-    <div class="container">
-        <div class="row h-50">
-            <div class="col">
-                <h1 data-aos="fade-up">Kegiatan Terbaru</h1>
-                <p  data-aos="fade-up" class="lead">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
-                </p>
-            </div>
+<div class="container">
+    <div class="row ">
+        <div class="col">
+            <h1 data-aos="fade-up">Kegiatan Terbaru</h1>
+            <p  data-aos="fade-up" class="lead">
+                @if (count($items) != null)
+                    <a href="{{route('article.show', $items->first()->slug)}}">{{$items->first()->title}}</a>
+                    <span class="text-muted">{!! Str::limit($items->first()->description, 150) !!}</span>
+                @endif
+            </p>
         </div>
     </div>
+</div>
 
 <section id="blog-content">
     <div class="container py-4">
@@ -94,40 +97,42 @@
                             <p class="card-text"><small class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
                                 </small></p>
                         </div>
-                        <div class="card-footer">{{$item->user->name}}</div>
+                        <div class="card-footer collapse">{{$item->user->name}}</div>
                     </div>
                 </div>
             @endforeach
             <div class="col-md-12 text-center">
-                <a data-aos="fade-up" href="" class="btn btn-outline-primary">Load More</a>
+                <a data-aos="fade-up" href="{{route('article.index')}}" class="btn btn-outline-primary">Selengkapnya</a>
             </div>
         </div>
     </div>
 </section>
 <hr>
-<section id="">
-    <div class="container">
-        <div class="row h-100 justify-content-center align-items-center flex-row">
-            <div class="col">
-                <h1 data-aos="fade-up">What People Say ?</h1>
-                <p  data-aos="fade-up" class="lead">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
-                </p>
+
+<div class="container py-4">
+    <div class="row h-50 align-items-center justify-content-center">
+        <div class="col">
+            <div class="card shadow border-0" style="border-radius:1.25rem">
+                <div class="row align-items-center no-gutters flex-row">
+                    <div class="col-md-3 p-4 text-center">
+                        <img src="https://img.icons8.com/bubbles/2x/worldwide-location.png" class="img-fluid">
+                    </div>
+                    <div class="col-md">
+                        <div class="card-body">
+                            <h1>Lokasi Kegiatan Taman Lansia An-Naba</h1>
+                            Desa Tanggulangin RT 03 RW 08 Kelurahan Genjahan, Kecamatan Ponjong Kabupaten Gunungkidul Daerah Istimewa Yogyakarta Indonesia
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-
+</div>
 
 @endsection
 
 @push('styles')
     <style>
-        #blog-content .card-footer 
-        {
-            display: none;
-        }
-
         .blog {
             background-image: url('images/hussain-ibrahim-cozpTyRDIwI-unsplash.jpg');
             background-attachment: fixed;
@@ -142,13 +147,17 @@
 
         h1 {
             font-weight: bold;
-            font-family: auto;
-            font-size: 3rem
+            /* font-family: auto; */
+            font-size: 2.5rem
         }
 
         .img-fluid-50 {
             max-width: 50%;
         }        
+
+        .card-img-overlay .card-body {
+            background-color: rgba(0,0,0,.5);
+        }
     </style>
 @endpush
 
@@ -212,5 +221,13 @@
             resize();
             $(window).resize(resize);
         });
+    </script>
+    <script>
+        $('.gallery').hover(function () {
+                $(this).find('.card-body').slideToggle();
+            }, function () {
+                $(this).find('.card-body').slideToggle();
+            }
+        );
     </script>
 @endpush

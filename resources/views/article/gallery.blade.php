@@ -4,6 +4,26 @@
     
 @section('content')
 
+@php
+    $img = \File::allFiles(public_path('images'));
+@endphp
+
+<div class="container">
+    <div class="row h-50 justify-content-center align-items-center">
+        <div class="col">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach ($img as $value)
+                        <img class="swiper-slide img-fluid" data-src="holder.js/1110x200?random=yes&textmode=exact&" alt="" srcset="">
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container py-4">
     <div class="card-columns">
         @foreach ($items as $item)
@@ -20,26 +40,6 @@
         @endforeach
     </div>
 </div>
-
-@php
-    $img = \File::allFiles(public_path('images'));
-@endphp
-
-<div class="container mb-4">
-    <div class="row">
-        <div class="col">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    @foreach ($img as $value)
-                        <img class="swiper-slide img-fluid" data-src="holder.js/1110x200?random=yes&textmode=exact&" alt="" srcset="">
-                    @endforeach
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 @endsection
 
 @push('styles')

@@ -162,8 +162,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    Taman Lansia An-Naba <br/>
-                    Mempersiapkan Insan Utama dan Cerdas di Usia Senja
+                   <u> Taman Lansia An-Naba</u>
+                    <p class="text-muted">Mempersiapkan Insan Utama dan Cerdas di Usia Senja</p>
                 </div>
                 <div class="col-6 col-md mb-4">
                     <h5 class="text-light-sm">Tentang An-Naba</h5>
