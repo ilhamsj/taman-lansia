@@ -3,18 +3,15 @@
 @section('title', 'Blog')
     
 @section('content')
-<div id="blog">
+<section id="blog">
     <div class="container">
-        <div class="row text-center h-100 justify-content-center align-items-center flex-row">
+        <div class="row h-50 justify-content-center align-items-center">
             <div class="col">
-                <h1 data-aos="slide-left">Blog</h1>
-                <p class="lead" data-aos="slide-right">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sunt, dicta perspiciatis consequuntur nulla animi dolorem reprehenderit placeat pariatur officia minima eum neque aut et aliquid veritatis sapiente atque?
-                </p>
+                <h3 class="bg-light p-4 rounded" data-aos="slide-left">Blog <span class="text-primary">Taman Lansia An-Naba</span></h3>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <div class="container py-4">
     <div class="row justify-content-center flex-row-reverse">
@@ -67,14 +64,4 @@
             border-radius: 2rem;
         }
     </style>
-@endpush
-
-@push('scripts')
-    <script src="{{ secure_asset('js/masonry.pkgd.min.js') }}"></script>
-    <script>
-        $('img').click(function (e) { 
-            e.preventDefault();
-            $(this).attr('data-aos', 'zoom-out');
-        });
-    </script>
 @endpush

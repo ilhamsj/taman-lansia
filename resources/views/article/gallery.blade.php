@@ -8,11 +8,11 @@
     $img = \File::allFiles(public_path('images'));
 @endphp
 
-<section>
+<section id="blog">
     <div class="container">
-        <div class="row h-50 align-items-center justify-content-center text-center">
+        <div class="row h-50 align-items-center justify-content-center">
             <div class="col">
-            <h3>
+            <h3 class="bg-light p-4 rounded" data-aos="slide-left">
                 Informasi
                 <span class="text-primary">
                     @if ($items->count() > 0)
@@ -26,6 +26,7 @@
         </div>
     </div>
 </section>
+
 
 <div class="container py-4">
     <div class="card-columns">
@@ -63,6 +64,12 @@
         }
         .zoom-rotate:hover img {
             transform: scale(2) rotate(25deg);
+        }
+        #blog {
+            background: chartreuse;
+            background-image: url('../images/photo-1508963493744-76fce69379c0.jpg');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 @endpush

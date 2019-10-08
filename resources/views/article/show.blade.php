@@ -4,38 +4,20 @@
     
 @section('content')
  
-<div class="show-cover">
+<div>
     <div class="container">
-        <div class="row h-100 justify-content-center align-items-center flex-row">
+        <div class="row h-70 justify-content-center align-items-center flex-row">
             <div class="col-11 col-sm cover p-4 jello animated">
                 <h1 class="display-3">{{$item->title}}</h1>
-                <div class="row">
-                    <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
-                        <span class="text-muted">Oleh</span> <br/>
-                        <a href="">{{$item->user->name}}</a>
-                    </div>
-                    <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
-                        <span class="text-muted">Kategori</span> <br/>
-                        <a href="">{{$item->category}}</a>
-                    </div>
-                    <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
-                        <span class="text-muted">Published</span> <br/>
-                        {{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}} 
-                    </div>
-                    <div data-aos="flip-up" class="col-6 col-sm-3 col-md-2 mb-2">
-                        <span class="text-muted">Updated</span> <br/>
-                        {{\Carbon\Carbon::parse($item->updated_at)->format('d M Y')}} 
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="position-relative" style="top:-75px; bottom:0">
+<div class="position-relative" style="top:-55px; bottom:0">
     <div class="container py-4">
-        <div class="row">
-            <div class="col-12 col-sm-8">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-sm-12">
                 <div class="card border-radius shadow">
                     <div class="card-body">
                         <span class="text-muted">{{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}</span>
@@ -45,7 +27,7 @@
                         </p>
                         <footer class="blockquote-footer">
                             <a href="">{{$item->user->name}}</a> at
-                            <cite title="Source Title"><a href="" class="card-link">{{$item->category}}</a></cite>
+                            <cite title="Source Title"><a href="{{ route('article.category', $item->category)}}" class="card-link">{{$item->category}}</a></cite>
                         </footer>
                     </div>
                 </div>
@@ -76,14 +58,4 @@
             border-radius: 1rem;
         }
     </style>
-@endpush
-@push('scripts')
-<script>
-    $('.cover').hover(function () {
-            $(this).addClass('infinite');
-        }, function () {
-            $(this).removeClass('infinite');
-        }
-    );
-</script>
 @endpush

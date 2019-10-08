@@ -83,7 +83,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('article.index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Profil</a>
@@ -95,7 +95,7 @@
                         <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Kegiatan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('article.category', 'blog')}}">Blog</a>
+                        <a class="nav-link" href="{{ route('article.index', 'blog')}}">Blog</a>
                     </li>
                     @guest
                         <li class="nav-item">
