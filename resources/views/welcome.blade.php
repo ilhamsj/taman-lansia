@@ -107,7 +107,6 @@
         </div>
     </div>
 </section>
-<hr>
 
 <div class="container py-4">
     <div class="row h-50 align-items-center justify-content-center">
