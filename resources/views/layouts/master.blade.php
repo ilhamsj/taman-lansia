@@ -89,10 +89,13 @@
                         <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Blog</a>
+                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Berita</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Kegiatan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Blog</a>
                     </li>
                     @guest
                         <li class="nav-item">
