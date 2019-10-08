@@ -86,7 +86,7 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Profil</a>
+                        <a class="nav-link" href="{{ route('profile')}}">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.category', 'berita')}}">Berita</a>
