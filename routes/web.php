@@ -51,7 +51,9 @@ Route::get('/', function () {
     ];
 
     return view('welcome')->with([
-        'items' => \App\Article::orderBy('created_at', 'desc')->paginate(6),
+        'items' => \App\Article::all(),
+        'kegiatan' => \App\Article::orderBy('created_at', 'desc')->where('category', 'kegiatan')->paginate(6),
+        'berita' => \App\Article::orderBy('created_at', 'desc')->where('category', 'berita')->paginate(6),
         'about' => $about
     ]);
 })->name('/');

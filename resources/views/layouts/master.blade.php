@@ -24,12 +24,6 @@
             border: none;
         }
 
-        .navbar, 
-        .navbar a {
-            font-family: roboto;
-            font-size: 0.9rem;
-            font-weight: 500
-        }
 
         .h-100 {
             min-height: 100vh;
@@ -78,16 +72,24 @@
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-expand-lg bg-transparent p-4" id="mainNav">
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-transparent p-4" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="{{route('/')}}">An-Naba</a>
+            <a class="navbar-brand" href="{{route('/')}}">
+                <img src="https://an-naba.test/images/apple-touch-icon.png" width="30" height="30" alt="" srcset="">
+            </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <i data-feather="menu"></i>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('article.index')}}">Blog <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('article.index')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.category', 'kegiatan')}}">Kegiatan</a>
@@ -162,7 +164,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                   <u> Taman Lansia An-Naba</u>
+                    <h5>Taman Lansia An-Naba</h5>
                     <p class="text-muted">Mempersiapkan Insan Utama dan Cerdas di Usia Senja</p>
                 </div>
                 <div class="col-6 col-md mb-4">
@@ -202,7 +204,6 @@
     </footer>
     
     <script src="{{secure_asset('js/app.js')}}"></script>
-    <script src="{{secure_asset('js/swiper.min.js')}}"></script>
     <script>
         $(".alert").delay(2000).slideUp(200, function() {
             $(this).alert('close');

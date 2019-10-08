@@ -90333,9 +90333,12 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! holderjs */ "./node_modules/holderjs/holder.js");
@@ -90350,8 +90353,6 @@ __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4
 
 __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
 
-__webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
-
 var AOS = __webpack_require__(/*! aos/dist/aos */ "./node_modules/aos/dist/aos.js");
 
 AOS.init();
@@ -90359,6 +90360,17 @@ AOS.init();
 var feather = __webpack_require__(/*! feather-icons */ "./node_modules/feather-icons/dist/feather.js");
 
 feather.replace();
+
+new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  loop: true
+});
 
 /***/ }),
 

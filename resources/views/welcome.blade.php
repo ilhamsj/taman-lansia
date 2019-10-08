@@ -2,18 +2,16 @@
 @section('title', 'Welcome')
 @section('content')
 
-
-
-<div class="swiper-container">
+<div class="swiper-container mb-4">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img class="img-fluid rounded" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
+            <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
         </div>
         <div class="swiper-slide">
-            <img class="img-fluid rounded" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
+            <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
         </div>
         <div class="swiper-slide">
-            <img class="img-fluid rounded" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
+            <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
         </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -47,11 +45,15 @@
         </div>
     </div>
 </div>
-    
+
+
 <section id="blog-content">
     <div class="container py-4">
         <div class="row">
-            @foreach ($items as $item)
+            <div class="col-12 my-4">
+                <h3>Berita Terbaru</h3>
+            </div>
+            @foreach ($berita as $item)
                 <div class="col-12 col-sm-4 mb-4" data-aos="fade-up">
                     <div class="card border-0 shadow">
                         <div class="card-body">
@@ -73,6 +75,48 @@
                     </div>
                 </div>
             @endforeach
+            <div class="col-12 text-right">
+                <a href="" class="btn btn-primary btn-sm shadow">
+                    Tampilkan lebih banyak <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog-content">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12 my-4">
+                <h3>Kegiatan</h3>
+            </div>
+            @foreach ($kegiatan as $item)
+                <div class="col-12 col-sm-4 mb-4" data-aos="fade-up">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <img class="img-fluid shadow rounded" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{$item->title}}
+                            </h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{\Carbon\Carbon::parse($item->created_at)->format('d M Y')}}
+                                </small>
+                            </p>
+                            <a href="{{route('article.show', $item->slug)}}" class="">
+                                Read More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <div class="col-12 text-right">
+                <a href="" class="btn btn-primary btn-sm shadow">
+                    Tampilkan lebih banyak <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -95,8 +139,6 @@
 
         h1 {
             font-weight: bold;
-            /* font-family: auto; */
-            font-size: 2.5rem
         }
 
         .img-fluid-50 {
@@ -111,14 +153,6 @@
 
 @push('scripts')
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            slidesPerView: 'auto',
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
 
         $(".about .container .row:odd").attr("class", "row h-100 align-items-center flex-row-reverse text-right");
 
