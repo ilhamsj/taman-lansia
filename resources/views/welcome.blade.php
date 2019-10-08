@@ -27,7 +27,7 @@
                     @if (count($items) != null)
                     <div class="row align-items-center no-gutters flex-row">
                         <div class="col-md-4 p-4 text-center">
-                            <img src="{{url('storage/images/'.$items->first()->image)}}" class="img-fluid shadow">
+                            <img src="{{url('storage/images/'.$items->first()->image)}}" class="img-fluid">
                         </div>
                         <div class="col-md">
                             <div class="card-body">
@@ -59,7 +59,7 @@
                     <div class="col-12 col-sm-4 mb-4" data-aos="fade-up">
                         <div class="card border-0 shadow">
                             <div class="card-body">
-                                <img class="img-fluid shadow" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
+                                <img class="img-fluid rounded" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -78,7 +78,7 @@
                     </div>
                 @endforeach
                 <div class="col-12 text-right">
-                    <a href="" class="btn btn-primary btn-sm shadow">
+                    <a href="{{ route('article.category', 'berita')}}" class="btn btn-primary btn-sm shadow">
                         Tampilkan lebih banyak <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -115,14 +115,13 @@
                     </div>
                 @endforeach
                 <div class="col-12 text-right">
-                    <a href="" class="btn btn-primary btn-sm shadow">
+                    <a href="{{ route('article.category', 'kegiatan')}}" class="btn btn-primary btn-sm shadow">
                         Tampilkan lebih banyak <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
 
 @push('styles')
