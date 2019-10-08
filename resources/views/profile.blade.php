@@ -2,7 +2,54 @@
 @section('title', 'Welcome')
 @section('content')
 
+<div id="about-us">
+@foreach ($about as $key => $value)
+<div data-aos="zoom-in" class="container mb-4">
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-md-12">
+            <div id="{{ Str::slug($key) }}" class="card border-0 shadow" style="border-radius:1.25rem">
+                <div class="row align-items-center no-gutters flex-row">
+                    <div class="col-md-5 p-4 text-center welcome">
+                            <img src="{{ secure_asset('images/lifecycle-works.png') }}" class="img-fluid">
+                    </div>
+                    <div class="col-md">
+                        <div class="card-body">
+                            <h1 data-aos="slide-down">{{$key}}</h1>
+                            @foreach ($value as $v)
+                                <p data-aos="flip-up" class="card-text text-muted lead">
+                                    {!! $v !!}
+                                </p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+</div>
 
+
+<div class="container py-4">
+    <div class="row h-50 align-items-center justify-content-center">
+        <div class="col">
+            <div class="card shadow border-0" style="border-radius:1.25rem">
+                <div class="row align-items-center no-gutters flex-row">
+                    <div class="col-md-3 p-4 text-center">
+                        <img src="https://img.icons8.com/bubbles/2x/worldwide-location.png" class="img-fluid">
+                    </div>
+                    <div class="col-md">
+                        <div class="card-body">
+                            <h1>Lokasi Kegiatan Taman Lansia An-Naba</h1>
+                            Desa Tanggulangin RT 03 RW 08 Kelurahan Genjahan, Kecamatan Ponjong Kabupaten Gunungkidul Daerah Istimewa Yogyakarta Indonesia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="swiper-container">
     <div class="swiper-wrapper">

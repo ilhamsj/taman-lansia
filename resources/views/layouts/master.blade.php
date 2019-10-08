@@ -8,7 +8,7 @@
     
 
     <meta name="csrf_token" content="{{csrf_token()}}">
-    <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <style>
         .display-6 {
             font-size: 1.5rem;
