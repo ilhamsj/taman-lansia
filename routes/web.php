@@ -70,3 +70,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/kategori/{name}', 'HomeController@category')->name('article.category');
+Route::get('/profil', 'HomeController@profile')->name('profile');
