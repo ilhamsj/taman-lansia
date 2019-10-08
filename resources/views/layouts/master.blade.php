@@ -78,7 +78,7 @@
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-default navbar-expand-lg bg-transparent" id="mainNav">
+    <nav class="navbar navbar-default navbar-expand-lg bg-transparent p-4" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">An-Naba</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
