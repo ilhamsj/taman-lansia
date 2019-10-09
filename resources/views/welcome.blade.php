@@ -2,7 +2,7 @@
 @section('title', 'Welcome')
 @section('content')
 
-    <div class="swiper-container">
+    <div class="swiper-container" style="max-height:75vh">
         <div class="swiper-wrapper">
             @foreach ($cover as $item)
                 <div class="swiper-slide">
