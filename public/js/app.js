@@ -90362,14 +90362,21 @@ var feather = __webpack_require__(/*! feather-icons */ "./node_modules/feather-i
 feather.replace();
 
 new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container', {
-  slidesPerView: 'auto',
-  centeredSlides: true,
   spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true
   },
-  loop: true
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
 });
 
 /***/ }),

@@ -72,7 +72,7 @@
     @stack('styles') 
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-transparent p-4" id="mainNav">
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-transparent p-2" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">
                 <img src="https://an-naba.test/images/apple-touch-icon.png" width="30" height="30" alt="" srcset="">
@@ -85,9 +85,34 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile')}}">Profil</a>
+
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Profil
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Tujuan
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Motto & Motivasi
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Perkenalan
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Sasaran
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Standar Pengasuhan
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile')}}">
+                                Target
+                            </a>
+                        </div>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.category', 'berita')}}">Berita</a>
                     </li>
@@ -113,9 +138,6 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home') }}">
-                                    Profile
-                                </a>
                                 <a class="dropdown-item" href="{{ route('admin.index') }}">
                                     Dashboard Admin
                                 </a>

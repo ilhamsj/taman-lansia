@@ -55,3 +55,9 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $('nav').addClass('fixed-top');
+    </script>
+@endpush

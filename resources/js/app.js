@@ -15,12 +15,19 @@ feather.replace()
 import Swiper from 'swiper';
 
 new Swiper('.swiper-container', {
-  slidesPerView: 'auto',
-  centeredSlides: true,
   spaceBetween: 30,
-  pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
   },
-  loop:true
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });

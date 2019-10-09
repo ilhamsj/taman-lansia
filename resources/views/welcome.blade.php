@@ -2,17 +2,15 @@
 @section('title', 'Welcome')
 @section('content')
 
-    <div class="swiper-container mb-4">
+    <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
-            </div>
-            <div class="swiper-slide">
-                <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
-            </div>
-            <div class="swiper-slide">
-                <img class="img-fluid" data-src="holder.js/1400x500?auto=yes&random=yes&textmode=exact" alt="" srcset="">
-            </div>
+            @foreach ($cover as $item)
+                <div class="swiper-slide">
+                    <a href="{{route('article.show', $item->slug)}}">
+                        <img style="max-width:100%" src="{{url('storage/images/'.$item->image)}}">
+                    </a>
+                </div>
+            @endforeach
         </div>
         <div class="swiper-pagination"></div>
     </div>
@@ -20,7 +18,9 @@
     <section class="container">
         <div class="row">
             <div class="col-12 my-4">
-                <h3>Taman Lansia An-Naba</h3>
+                <h3 class="p-4 rounded" style="background: white">
+                    Selamat datang di website  <span class="text-primary">Taman Lansia An-Naba</span>
+                </h3>
             </div>
             <div class="col">
                 <div class="card shadow border-0 rounded">
@@ -53,11 +53,13 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col-12 my-4">
-                    <h3>Berita Terbaru</h3>
+                    <h3 class="p-4 rounded" style="background: white">
+                        Berita <span class="text-primary">Terbaru</span>
+                    </h3>
                 </div>
                 @foreach ($berita as $item)
                     <div class="col-12 col-sm-4 mb-4" data-aos="fade-up">
-                        <div class="card border-0 shadow">
+                        <div class="card border-0">
                             <div class="card-body">
                                 <img class="img-fluid rounded" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                             </div>
@@ -90,13 +92,15 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col-12 my-4">
-                    <h3>Kegiatan</h3>
+                    <h3 class="p-4 rounded" style="background: white">
+                        Informasi <span class="text-primary">Kegiatan</span>
+                    </h3>
                 </div>
                 @foreach ($kegiatan as $item)
                     <div class="col-12 col-sm-4 mb-4" data-aos="fade-up">
-                        <div class="card border-0 shadow">
+                        <div class="card border-0">
                             <div class="card-body">
-                                <img class="img-fluid shadow rounded" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
+                                <img class="img-fluid rounded" src="{{url('storage/images/'.$item->image)}}" alt="{{$item->image}}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
