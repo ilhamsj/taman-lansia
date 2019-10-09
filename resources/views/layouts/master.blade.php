@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Taman Lansia An-Naba | @yield('title')</title>
-    
-
     <meta name="csrf_token" content="{{csrf_token()}}">
+    
+    <link rel="icon" 
+      type="image/png" 
+      href="{{ secure_asset('images/apple-icon-180x180.png') }}">
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <style>
         .display-6 {
@@ -75,7 +77,7 @@
     <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-transparent p-2" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="{{route('/')}}">
-                <img src="https://an-naba.test/images/apple-touch-icon.png" width="30" height="30" alt="" srcset="">
+                <strong>AN-NABA</strong>
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <i data-feather="menu"></i>

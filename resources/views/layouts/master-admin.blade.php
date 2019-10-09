@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Taman Lansia An-Naba | @yield('title')</title>
+    <link rel="icon" 
+        type="image/png" 
+        href="{{ secure_asset('images/apple-icon-180x180.png') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         .left {min-height: 100vh}
         .h-100 {min-height: 100vh}
     </style>
+    <link id="favicon" rel="shortcut icon" href="{{ secure_asset('images/logo.png') }}" type="image/png">
     @stack('styles')
 </head>
 <body>
     <nav class="navbar navbar-default navbar-expand-lg border-bottom shadow-sm">
         <div class="container">
         <a class="navbar-brand" href="{{route('/')}}">
-            <img src="{{ secure_asset('images/apple-touch-icon.png') }}" width="30" height="30" alt="" srcset="">
+            <img src="{{ secure_asset('images/logo.png') }}" width="30" height="30" alt="" srcset="">
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <i data-feather="menu"></i>
